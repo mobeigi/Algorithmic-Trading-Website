@@ -14,7 +14,7 @@
  <div ng-controller="VersionController">
  <form>
  <!-- Drop Down Menu -->
- <select ng-model="deploymentURL">
+ <select ng-model="deploymentURL" ng-selected="$first">
  <option ng-repeat="deployment in deployments" value="{{deployment.link}}">{{deployment.short_descr}} ({{deployment.os}})</option>
  </select>
  <input type="submit" ng-click="downloadFile(deploymentURL)" value="Download" />
