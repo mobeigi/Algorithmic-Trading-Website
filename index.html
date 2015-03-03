@@ -11,8 +11,8 @@
 <body ng-app="appDownload">
  <div ng-controller="VersionController">
  <!-- Drop Down Menu -->
- <ul ng-repeat="i in deployments">
-  <li>{{ x.Name + ', ' + x.Country }}</li>
+ <ul ng-repeat="x in deployments">
+  <li>{{ x.version}}</li>
  </ul>
  </div>
  
