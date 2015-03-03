@@ -12,7 +12,7 @@
  <div ng-controller="VersionController">
  <!-- Drop Down Menu -->
  <select>
- <option ng-repeat="x in deployments and y in x.links" value="{{y.link}}">{{x.short_descr}} ({{y.os}})</option>
+ <option ng-repeat="deployment in deployments" value="{{deployment.link}}">{{deployment.short_descr}} ({{deployment.os}})</option>
  </select>
  </div>
  
