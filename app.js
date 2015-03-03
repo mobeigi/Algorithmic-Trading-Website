@@ -16,7 +16,7 @@ app.controller("VersionController", function($scope, $http, $window) {
           os: item2.os
         });
       });
-    })
+    });
   });
   
   $scope.downloadFile = function(deploymentURL) {
