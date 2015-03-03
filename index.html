@@ -11,11 +11,9 @@
 <body ng-app="appDownload">
  <div ng-controller="VersionController">
  <!-- Drop Down Menu -->
- <div ng-repeat="x in deployments">
-  <select>
-  <option ng-repeat="y in x.links" value="{{y.link}}">{{x.short_descr}} ({{y.os}})</option>
-  </select>
- </div>
+ <select ng-repeat="x in deployments">
+ <option ng-repeat="y in x.links" value="{{y.link}}">{{x.short_descr}} ({{y.os}})</option>
+ </select>
  </div>
  
 <tt>Copyright © 2015. Revitpo Inc. All Rights Reserved.</tt>
