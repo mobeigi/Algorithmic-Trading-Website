@@ -20,7 +20,10 @@ app.controller("VersionController", function($scope, $http, $window) {
   });
   
   $scope.downloadFile = function(deploymentURL) {
-    if(!typeof variable_here === 'undefined') {
+    if(typeof variable_here === 'undefined') {
+      alert("Please select a deployment version and operating system.");
+    }
+    else {
       $window.location.href = "/".concat(deploymentURL);
     }
   };
