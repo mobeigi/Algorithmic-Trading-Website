@@ -13,7 +13,7 @@
  <!-- Drop Down Menu -->
  <div ng-repeat="x in deployments">
   <select>
-  <option ng-repeat="(os, link) in x.links" value="{{link}}">{{x.short_descr}} ({{os}})</option>
+  <option ng-repeat="y in x.links" value="{{y.link}}">{{x.short_descr}} ({{y.os}})</option>
   </select>
  </div>
  </div>
