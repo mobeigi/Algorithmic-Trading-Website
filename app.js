@@ -20,7 +20,9 @@ app.controller("VersionController", function($scope, $http, $window) {
   });
   
   $scope.downloadFile = function(deploymentURL) {
-    $window.location.href = "/".concat(deploymentURL);
+    if(!typeof variable_here === 'undefined') {
+      $window.location.href = "/".concat(deploymentURL);
+    }
   };
   
 });
