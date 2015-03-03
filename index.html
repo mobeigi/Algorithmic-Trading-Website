@@ -9,13 +9,22 @@
   <script src="app.js"></script>
 </head>
 <body ng-app="appDownload">
+
+
  <div ng-controller="VersionController">
+ <form>
  <!-- Drop Down Menu -->
- <select>
+ <select ng-model="deploymentURL">
  <option ng-repeat="deployment in deployments" value="{{deployment.link}}">{{deployment.short_descr}} ({{deployment.os}})</option>
  </select>
+ <input type="submit" ng-click="downloadFile(deploymentURL)" value="Download" />
+ </form>
  </div>
+<h2 class="icon_comp">Builds</h2>
+<p>Our application is available for both Microsoft Windows &reg; and Linux</p>
  
+<footer>
 <tt>Copyright © 2015. Revitpo Inc. All Rights Reserved.</tt>
+</footer>
 </body>
 </html>

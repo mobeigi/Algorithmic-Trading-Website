@@ -1,6 +1,6 @@
 var app = angular.module("appDownload", []);
 
-app.controller("VersionController", function($scope, $http) {
+app.controller("VersionController", function($scope, $http, $window) {
 
   $scope.deployments = [];
   
@@ -18,5 +18,9 @@ app.controller("VersionController", function($scope, $http) {
       });
     })
   });
+  
+  $scope.downloadFile = function(deploymentURL) {
+    $window.location.href = "/".concat(deploymentURL);
+  };
   
 });
