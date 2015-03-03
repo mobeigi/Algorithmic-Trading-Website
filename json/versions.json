@@ -1,18 +1,35 @@
 [
     {
-        "version": "0.00",
+        "version": "1.01",
         "date": "24-02-201514: 30: 00",
-        "description": "Testversionnotaversion",
-        "short_descr": "Version 0.00",
+        "description": "Major Update 1",
+        "short_descr": "v1.01",
+        "changes": "Added Example Algorithm",
+        "links": [
+            {
+                "os": "Windows",
+                "link": "builds/windows/101-win.exe"
+            },
+            {
+                "os": "Linux",
+                "link": "builds/linux/101-linux"
+            }
+        ]
+    },
+    {
+        "version": "1.00",
+        "date": "24-02-201514: 30: 00",
+        "description": "Initial Release",
+        "short_descr": "v1.00",
         "changes": "No Changes",
         "links": [
             {
                 "os": "Windows",
-                "link": "versions/linux/thing.exe"
+                "link": "builds/windows/100-win.exe"
             },
             {
                 "os": "Linux",
-                "link": "versions/linux/thing.exe"
+                "link": "builds/linux/100-linux"
             }
         ]
     }
