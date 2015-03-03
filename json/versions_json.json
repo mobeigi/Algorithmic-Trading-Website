@@ -5,6 +5,20 @@
 		'description':'Test version not a version',
 		'short_descr':'Test version',
 		'changes':'No changes',
-		'link':'http://www.google.com/'
+		'links':[
+					{'name': 'Linux',
+					'link': 'versions/linux/thing'
+				}]
+	}, 
+	{
+		'version':'0.0.1',
+		'date':'25-02-2015 14:30:00',
+		'description':'Test version not a version',
+		'short_descr':'Test version',
+		'changes':'No changes',
+		'links':[
+					{'name': 'Linux',
+					'link': 'versions/linux/thing'
+				}]
 	}
 ] }
