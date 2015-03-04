@@ -30,13 +30,14 @@ app.controller("VersionController", function($scope, $http, $window, $document) 
   
 });
 
-app.controller("ViewerController", function($scope, $http, $sce) {
+app.controller("ViewerController", function($scope, $http, $sce, $compile) {
   //Load a website into the content div
   $scope.loadContent = function(webpageName) {
     $http.get("includes/".concat(webpageName)).
     success(function(data, status, headers, config) {
-      $scope.content = $sce.parseAsHtml(data);
-      //document.getElementById("content").innerHTML = data;
+      var linkingFunction = $compile(data);
+      var elem = linkingFunction($scope);
+      $scope.content = $sce.trustAsHtml(elem);
     });
   };
 });
