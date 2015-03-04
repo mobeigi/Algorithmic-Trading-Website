@@ -35,23 +35,20 @@ app.controller("ViewerController", ['$scope','$sce', '$http', function ViewerCon
   $scope.loadContent = function(webpageName) {
     $http.get("includes/".concat(webpageName)).
     success(function(data, status, headers, config) {
-      $scope.content = $sce.trustAsHtml(data);
+      $scope.rawHTML = data;
     });
   };
   
   $scope.test = function() {
     console.log('test');
   }
-}]).directive('compile', function($compile, $parse){
-    return {
-        link: function(scope, element, attr){
-            var parsed = $parse(attr.ngBindHtml);
-            function getStringValue() { return (parsed(scope) || '').toString(); }
-
-            //Recompile if the template changes
-            scope.$watch(getStringValue, function() {
-                $compile(element, null, -9999)(scope);  //The -9999 makes it skip directives so that we do not recompile ourselves
-            });
-        }         
-    }
+}]).directive('compile', function($compile) {
+	'use strict';
+	return {
+		restrict: 'A',
+		link: function (scope, element, attrs) {
+				element.html(scope.rawHTML);
+        $compile(element.contents())(scope);
+		}
+	}
 });
