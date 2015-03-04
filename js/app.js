@@ -1,4 +1,4 @@
-var app = angular.module("revitpoWeb", []);
+var app = angular.module("revitpoWeb", ['ngSanitize']);
 
 app.controller("VersionController", function($scope, $http, $window, $document) {
 
