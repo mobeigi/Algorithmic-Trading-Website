@@ -1,5 +1,9 @@
 /* Custom styling CSS */
 
+#header {
+  margin-top: 50px;
+}
+
 #logo {
   margin: 0 auto;
   width: 600px;
