@@ -38,6 +38,10 @@ app.controller("ViewerController", function($scope, $http, $sce, $compile) {
       $scope.content = $sce.trustAsHtml(data);
     });
   };
+  
+  $scope.test = function() {
+    console.log('test');
+  }
 });
 
 app.directive('compile', function($compile, $parse){

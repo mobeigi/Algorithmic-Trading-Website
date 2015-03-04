@@ -1,8 +1,7 @@
 <!-- Download content --> 
-<div compile="details">
 <h1>Builds</h1>
 <div ng-controller="VersionController">
-    
+    <button ng-click="test()">Test</button>
     <form>
         <!-- Drop Down Menu -->
         <select ng-model="deploymentURL"">
@@ -11,5 +10,4 @@
         </select>
         <input type="submit" ng-click="downloadFile(deploymentURL)" value="Download" />
     </form>                                                                 
-</div>
 </div>
