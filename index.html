@@ -25,12 +25,17 @@
 <body ng-app="appDownload">
     <div class="container" id="wrapper">
         <div ng-include src="'includes/header.html'"></div>
+        
+        <div ng-controller="ViewerController">
+        <!-- start view controller -->
+        
         <div ng-include src="'includes/menu_bar.html'"></div>
         
         <!-- Content -->
-        <div ng-controller="ViewerController">
         <!-- load homepage initially -->
         <div id="content" ng-init="loadContent('home.html')"></div>
+        
+        <!-- end view controller -->
         </div>
         
         <div ng-include src="'includes/footer.html'"></div>
