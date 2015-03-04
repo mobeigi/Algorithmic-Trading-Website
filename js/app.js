@@ -45,9 +45,7 @@ app.controller("ViewerController", ['$scope','$sce', '$http', function ViewerCon
   $scope.test = function() {
     console.log('test');
   }
-}]);
-
-app.directive('compile', function($compile) {
+}]).directive('compile', function($compile) {
 	'use strict';
 	return {
 		restrict: 'A',
