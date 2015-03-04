@@ -47,15 +47,15 @@ footer div.box {
 }
 
 .orbtn {
-  background: #ff9742;
-  background-image: -webkit-linear-gradient(top, #ff9742, #f06c00);
-  background-image: -moz-linear-gradient(top, #ff9742, #f06c00);
-  background-image: -ms-linear-gradient(top, #ff9742, #f06c00);
-  background-image: -o-linear-gradient(top, #ff9742, #f06c00);
-  background-image: linear-gradient(to bottom, #ff9742, #f06c00);
-  -webkit-border-radius: 11;
-  -moz-border-radius: 11;
-  border-radius: 11px;
+  background: #ff3d1f;
+  background-image: -webkit-linear-gradient(top, #ff3d1f, #e7482d);
+  background-image: -moz-linear-gradient(top, #ff3d1f, #e7482d);
+  background-image: -ms-linear-gradient(top, #ff3d1f, #e7482d);
+  background-image: -o-linear-gradient(top, #ff3d1f, #e7482d);
+  background-image: linear-gradient(to bottom, #ff3d1f, #e7482d);
+  -webkit-border-radius: 10;
+  -moz-border-radius: 10;
+  border-radius: 10px;
   font-family: Arial;
   color: #ffffff;
   font-size: 18px;
@@ -64,6 +64,6 @@ footer div.box {
 }
 
 .orbtn:hover {
-  background: #ffa44f;
+  background: #ff8170;
   text-decoration: none;
 }
