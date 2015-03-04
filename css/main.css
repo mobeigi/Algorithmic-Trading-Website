@@ -6,7 +6,7 @@
 
 #logo {
   margin: 0 auto;
-  width: 600px;
+  width: 60%;
   display: block;
 }
 
@@ -26,7 +26,7 @@ footer {
 }
 
 footer div.box {
-  width: 800px;
+  width: 80%;
   margin: 0 auto;
   text-align: center;
 }
