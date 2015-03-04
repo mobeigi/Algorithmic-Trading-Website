@@ -21,7 +21,7 @@ app.controller("VersionController", function($scope, $http, $window, $document) 
   
   //Load a website into the content div
   $scope.loadContent = function(webpageName) {
-    $http.get("/includes/".concat(webpageName)).then(function(response) {
+    $http.get("includes/".concat(webpageName)).then(function(response) {
       var contentElement = $document.find('#content');
       contentElement.replaceWith(response.data);
     });
