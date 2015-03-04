@@ -6,26 +6,49 @@
   <title>Algorithmic Trading - Revitpo Inc</title>
   
   <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.3.14/angular.min.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
   <script src="js/version.js"></script>
+  
+  <!-- Custom CSS -->
+  <link rel="stylesheet" href="/css/main.css">
+    
+  <!-- Latest compiled and minified CSS -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css">
+
+  <!-- Optional theme -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap-theme.min.css">
+
+  <!-- Latest compiled and minified JavaScript -->
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/js/bootstrap.min.js"></script>
 </head>
+
 <body ng-app="appDownload">
+    <div class="container">
+        <div ng-include src="'includes/header.html'"></div>
+        <div ng-include src="'includes/menu_bar.html'"></div>
+        
+        <!-- Home page content -->
+        <div ng-controller="VersionController">
+        <form>
+        <!-- Drop Down Menu -->
+        <select ng-model="deploymentURL"">
+        <option selected="selected" value="">-</option>
+        <option ng-repeat="deployment in deployments" value="{{deployment.link}}">{{deployment.short_descr}} ({{deployment.os}})</option>
+        </select>
+        <input type="submit" ng-click="downloadFile(deploymentURL)" value="Download" />
+        </form>
+        </div>
+                
+        <!-- News Content -->
+        <ul>
+            <li>No recent updates.</li>
+        </ul>
 
 
- <div ng-controller="VersionController">
- <form>
- <!-- Drop Down Menu -->
- <select ng-model="deploymentURL"">
- <option selected="selected" value="">-</option>
- <option ng-repeat="deployment in deployments" value="{{deployment.link}}">{{deployment.short_descr}} ({{deployment.os}})</option>
- </select>
- <input type="submit" ng-click="downloadFile(deploymentURL)" value="Download" />
- </form>
- </div>
-<h2 class="icon_comp">Builds</h2>
-<p>Our application is available for both Microsoft Windows &reg; and Linux</p>
- 
-<footer>
-<tt>Copyright © 2015. Revitpo Inc. All Rights Reserved.</tt>
-</footer>
+        <footer>
+        Copyright &copy; 2015. Revitpo Inc. All Rights Reserved.
+        </footer>
+        
+    </div>
 </body>
 </html>
