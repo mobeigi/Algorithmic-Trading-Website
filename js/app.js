@@ -31,6 +31,8 @@ app.controller("VersionController", function($scope, $http, $window, $document) 
 });
 
 app.controller("ViewerController", ['$scope','$sce', '$http', function ViewerController($scope, $sce, $http) {
+  $scope.rawHTML = "test";
+  
   //Load a website into the content div
   $scope.loadContent = function(webpageName) {
     $http.get("includes/".concat(webpageName)).
