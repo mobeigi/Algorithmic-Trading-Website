@@ -33,9 +33,10 @@ app.controller("VersionController", function($scope, $http, $window, $document) 
 app.controller("ViewerController", function($scope, $http, $document) {
   //Load a website into the content div
   $scope.loadContent = function(webpageName) {
-    $http.get("includes/".concat(webpageName)).then(function(response) {
+    $http.get("includes/".concat(webpageName)).
+    success(function(data, status, headers, config) {
       var contentElement = $document.find('#content');
-      contentElement.replaceWith(response.data);
+      contentElement.replaceWith(data);
     });
   };
 });
