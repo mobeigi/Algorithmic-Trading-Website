@@ -35,14 +35,7 @@ app.controller("ViewerController", function($scope, $http, $document) {
   $scope.loadContent = function(webpageName) {
     $http.get("includes/".concat(webpageName)).
     success(function(data, status, headers, config) {
-      var contentElement = $document.find('#content');
-      console.log(data);
-      contentElement.replaceWith(data);
-    }).
-    error(function(data, status, headers, config) {
-      // called asynchronously if an error occurs
-      // or server returns response with an error status.
-      console.log(status);
+      document.getElementById("content").innerHTML = data;
     });
   };
 });
