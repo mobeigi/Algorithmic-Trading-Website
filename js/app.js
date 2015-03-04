@@ -37,6 +37,8 @@ app.controller("ViewerController", function($scope, $http, $sce, $compile) {
     success(function(data, status, headers, config) {
       var linkingFunction = $compile(data);
       var elem = linkingFunction($scope);
+      console.log(elem);
+      console.log(elem.html());
       $scope.content = $sce.trustAsHtml(elem.html());
     });
   };
