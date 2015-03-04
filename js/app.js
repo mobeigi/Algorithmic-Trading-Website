@@ -30,7 +30,7 @@ app.controller("VersionController", function($scope, $http, $window, $document) 
   
 });
 
-app.controller("ViewerController", ['$scope','$sce', '$http', function ViewerController($scope, $sce, $http) {
+app.controller("ViewerController", ['$scope','$sce', '$http', '$compile', function ViewerController($scope, $sce, $http, $compile) {
   $scope.rawHTML = "test";
   
   //Load a website into the content div
