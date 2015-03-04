@@ -1,6 +1,6 @@
 var app = angular.module("appDownload", []);
 
-app.controller("VersionController", function($scope, $http, $window) {
+app.controller("VersionController", function($scope, $http, $window, $document) {
 
   $scope.deployments = [];
   
@@ -18,6 +18,14 @@ app.controller("VersionController", function($scope, $http, $window) {
       });
     });
   });
+  
+  //Load a website into the content div
+  $scope.loadContent = function(webpageName) {
+    $http.get("/includes/".concat(webpageName)).then(function(response) {
+      var contentElement = $document.find('#content'));
+      contentElement.replaceWith(response.data);
+    });
+  };
   
   $scope.downloadFile = function(deploymentURL) {
     if(typeof deploymentURL === 'undefined') {
