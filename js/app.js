@@ -49,6 +49,7 @@ app.controller("ViewerController", ['$scope','$sce', '$http', function ViewerCon
 	'use strict';
 	return {
 		restrict: 'A',
+    replace: true,
 		link: function (scope, element, attrs) {
         console.log("TEST");
         console.log(scope.rawHTML);
