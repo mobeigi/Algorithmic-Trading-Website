@@ -36,17 +36,22 @@ app.controller("ViewerController", ['$scope','$sce', '$http', function ViewerCon
     $http.get("includes/".concat(webpageName)).
     success(function(data, status, headers, config) {
       $scope.rawHTML = data;
+      console.log(data);
     });
   };
   
   $scope.test = function() {
     console.log('test');
   }
-}]).directive('compile', function($compile) {
+}]);
+
+app.directive('compile', function($compile) {
 	'use strict';
 	return {
 		restrict: 'A',
 		link: function (scope, element, attrs) {
+        console.log("TEST");
+        console.log(scope.rawHTML);
 				element.html(scope.rawHTML);
         $compile(element.contents())(scope);
 		}
