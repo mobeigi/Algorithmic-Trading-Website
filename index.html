@@ -28,23 +28,9 @@
         <div ng-include src="'includes/menu_bar.html'"></div>
         
         <!-- Content -->
-        <h1>Builds</h1>
-        <div ng-controller="VersionController">
-        <form>
-        <!-- Drop Down Menu -->
-        <select ng-model="deploymentURL"">
-        <option selected="selected" value="">-</option>
-        <option ng-repeat="deployment in deployments" value="{{deployment.link}}">{{deployment.short_descr}} ({{deployment.os}})</option>
-        </select>
-        <input type="submit" ng-click="downloadFile(deploymentURL)" value="Download" />
-        </form>
-        </div>
+        <div ng-bind-html="content"></div>
         
-        <footer>
-        <div class="box">
-				<tt>Copyright &copy; 2015. Revitpo Inc. All Rights Reserved.</tt>
-        </div>
-        </footer>
+        <div ng-include src="'includes/footer.html'"></div>
         
     </div>
 </body>
