@@ -40,15 +40,16 @@ app.controller("ViewerController", function($scope, $http, $sce, $compile) {
   };
 });
 
-app.directive('compile', function ($compile) {
-  return {
-    restrict: 'A',
-    replace: true,
-    link: function (scope, ele, attrs) {
-      scope.$watch(attrs.dynamic, function(html) {
-        ele.html(html);
-        $compile(ele.contents())(scope);
-      });
+app.directive('compile', function($compile, $parse){
+    return {
+        link: function(scope, element, attr){
+            var parsed = $parse(attr.ngBindHtml);
+            function getStringValue() { return (parsed(scope) || '').toString(); }
+
+            //Recompile if the template changes
+            scope.$watch(getStringValue, function() {
+                $compile(element, null, -9999)(scope);  //The -9999 makes it skip directives so that we do not recompile ourselves
+            });
+        }         
     }
-  };
 });
