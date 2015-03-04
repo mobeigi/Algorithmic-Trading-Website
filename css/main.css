@@ -17,7 +17,7 @@ footer {
 	left:0;
 }
 
-footer.box {
+footer div.box {
   width: 800px;
   margin: 0 auto;
 }
