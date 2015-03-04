@@ -7,6 +7,6 @@
         <option selected="selected" value="">-</option>
         <option ng-repeat="deployment in deployments" value="{{deployment.link}}">{{deployment.short_descr}} ({{deployment.os}})</option>
         </select>
-        <input type="submit" ng-click="downloadFile(deploymentURL)" value="Download" />
+        <input class="orbtn" type="submit" ng-click="downloadFile(deploymentURL)" value="Download" />
     </form>                                                                 
 </div>

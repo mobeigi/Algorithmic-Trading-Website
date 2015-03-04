@@ -45,3 +45,25 @@ footer div.box {
   height: 30px;
   font-size: 18px;
 }
+
+.orbtn {
+  background: #ff9742;
+  background-image: -webkit-linear-gradient(top, #ff9742, #f06c00);
+  background-image: -moz-linear-gradient(top, #ff9742, #f06c00);
+  background-image: -ms-linear-gradient(top, #ff9742, #f06c00);
+  background-image: -o-linear-gradient(top, #ff9742, #f06c00);
+  background-image: linear-gradient(to bottom, #ff9742, #f06c00);
+  -webkit-border-radius: 11;
+  -moz-border-radius: 11;
+  border-radius: 11px;
+  font-family: Arial;
+  color: #ffffff;
+  font-size: 18px;
+  padding: 5px 10px 5px 10px;
+  text-decoration: none;
+}
+
+.orbtn:hover {
+  background: #ffa44f;
+  text-decoration: none;
+}
