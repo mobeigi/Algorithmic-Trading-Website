@@ -15,9 +15,11 @@ footer {
 	position:absolute;
 	bottom:0;
 	left:0;
+  border-top: 1px solid #DDD;
 }
 
 footer div.box {
   width: 800px;
   margin: 0 auto;
+  text-align: center;
 }
