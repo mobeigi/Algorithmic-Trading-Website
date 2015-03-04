@@ -43,22 +43,18 @@ app.controller("ViewerController", function($scope, $http, $sce, $compile) {
 
 app.directive('compile', ['$compile', function ($compile) {
     return function(scope, element, attrs) {
-        scope.$watch(
-            function(scope) {
-                // watch the 'compile' expression for changes
-                return scope.$eval(attrs.compile);
-            },
-            function(value) {
-                // when the 'compile' expression changes
-                // assign it into the current DOM
-                element.html(value);
+        var ensureCompileRunsOnce = scope.$watch(function(scope) {
+            return $sce.parseAsHtml(attrs.compile)(scope);
+        },
+        function(value) {
+            // when the parsed expression changes assign it into the current DOM
+            element.html(value);
 
-                // compile the new DOM and link it to the current
-                // scope.
-                // NOTE: we only compile .childNodes so that
-                // we don't get into infinite loop compiling ourselves
-                $compile(element.contents())(scope);
-            }
-        );
+            // compile the new DOM and link it to the current scope.
+            $compile(element.contents())(scope);
+
+            // Use un-watch feature to ensure compilation happens only once.
+            ensureCompileRunsOnce();
+        });
     };
 }])
