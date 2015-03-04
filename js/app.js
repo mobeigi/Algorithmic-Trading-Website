@@ -20,7 +20,7 @@ app.controller("VersionController", function($scope, $http, $window, $document) 
   });
   
   $scope.downloadFile = function(deploymentURL) {
-    if(typeof deploymentURL === 'undefined') {
+    if(typeof deploymentURL === 'undefined' || deploymentURL=="") {
       alert("Please select a deployment version and operating system.");
     }
     else {
@@ -30,6 +30,7 @@ app.controller("VersionController", function($scope, $http, $window, $document) 
   
 });
 
+//Viewer controller is used to dynamically load each page
 app.controller("ViewerController", ['$scope','$sce', '$http', '$compile', function ViewerController($scope, $sce, $http, $compile) {
   
   //Load a website into the content div
@@ -39,10 +40,6 @@ app.controller("ViewerController", ['$scope','$sce', '$http', '$compile', functi
       $scope.content =  $sce.trustAsHtml(data);
     });
   };
-  
-  $scope.test = function() {
-    console.log('test');
-  }
 }]).directive('compile', function($compile, $parse) {
   return {
     link: function(scope, element, attr) {
