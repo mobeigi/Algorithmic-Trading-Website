@@ -1,4 +1,4 @@
-var app = angular.module("appDownload", []);
+var app = angular.module("revitpoWeb", []);
 
 app.controller("VersionController", function($scope, $http, $window, $document) {
 
@@ -31,8 +31,6 @@ app.controller("VersionController", function($scope, $http, $window, $document) 
 });
 
 app.controller("ViewerController", function($scope, $http, $sce, $compile) {
-  $scope.rawHTML;
-  
   //Load a website into the content div
   $scope.loadContent = function(webpageName) {
     $http.get("includes/".concat(webpageName)).
