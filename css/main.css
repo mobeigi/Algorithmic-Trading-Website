@@ -39,3 +39,9 @@ footer div.box {
   margin: 0 auto;
   text-align: center;
 }
+
+#download-dropdown {
+  width: 30%;
+  height: 30px;
+  font-size: 18px;
+}
