@@ -2,8 +2,15 @@
 <html>
 
 <head>
+    
     <script src= "http://ajax.googleapis.com/ajax/libs/angularjs/1.2.26/angular.min.js"></script>
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+
+    <!-- Load the header using jquery -->
+    <script> $(function(){
+      $("#includedHeader").load("includes/header.html"); 
+    });
+    </script>
 
     <!-- Latest compiled and minified CSS -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css">
@@ -19,7 +26,7 @@
 <body>
     <div class="container">
         
-        <div ng-include src="'includes/header.html'"></div>
+        <div id="includedHeader"></div>
         
         <!-- Home page content -->
         <h1>News</h1>
