@@ -50,7 +50,7 @@ app.controller("ViewerController", ['$scope','$sce', function ViewerController($
 
             //Recompile if the template changes
             scope.$watch(getStringValue, function() {
-                $compile(element, null, 0)(scope);  //The -9999 makes it skip directives so that we do not recompile ourselves
+                $compile(element, null, -9999)(scope);  //The -9999 makes it skip directives so that we do not recompile ourselves
             });
         }         
     }
