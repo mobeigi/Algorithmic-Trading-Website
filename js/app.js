@@ -19,14 +19,6 @@ app.controller("VersionController", function($scope, $http, $window, $document) 
     });
   });
   
-  //Load a website into the content div
-  $scope.loadContent = function(webpageName) {
-    $http.get("includes/".concat(webpageName)).then(function(response) {
-      var contentElement = $document.find('#content');
-      contentElement.replaceWith(response.data);
-    });
-  };
-  
   $scope.downloadFile = function(deploymentURL) {
     if(typeof deploymentURL === 'undefined') {
       alert("Please select a deployment version and operating system.");
@@ -36,4 +28,14 @@ app.controller("VersionController", function($scope, $http, $window, $document) 
     }
   };
   
+});
+
+app.controller("ViewerController", function($scope, $http, $document) {
+  //Load a website into the content div
+  $scope.loadContent = function(webpageName) {
+    $http.get("includes/".concat(webpageName)).then(function(response) {
+      var contentElement = $document.find('#content');
+      contentElement.replaceWith(response.data);
+    });
+  };
 });
