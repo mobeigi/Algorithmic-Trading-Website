@@ -36,7 +36,7 @@ app.controller("ViewerController", ['$scope','$sce', '$http', '$compile', functi
   $scope.loadContent = function(webpageName) {
     $http.get("includes/".concat(webpageName)).
     success(function(data, status, headers, config) {
-      $scope.myHTML =  $sce.trustAsHtml(data);
+      $scope.content =  $sce.trustAsHtml(data);
     });
   };
   
