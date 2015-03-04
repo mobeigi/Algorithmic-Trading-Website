@@ -38,6 +38,9 @@ app.controller("ViewerController", ['$scope','$sce', '$http', function ViewerCon
     $http.get("includes/".concat(webpageName)).
     success(function(data, status, headers, config) {
       $scope.rawHTML = data;
+      var elem = $('#contentID');
+      elem.html(data);
+      $compile(elem.contents())($scope);
       console.log(data);
     });
   };
