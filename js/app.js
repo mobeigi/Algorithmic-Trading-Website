@@ -30,7 +30,7 @@ app.controller("VersionController", function($scope, $http, $window, $document) 
   
 });
 
-app.controller("ViewerController", function($scope, $http, $sce, $compile) {
+app.controller("ViewerController", ['$scope','$sce', function ViewerController($scope, $sce) {
   //Load a website into the content div
   $scope.loadContent = function(webpageName) {
     $http.get("includes/".concat(webpageName)).
@@ -42,9 +42,7 @@ app.controller("ViewerController", function($scope, $http, $sce, $compile) {
   $scope.test = function() {
     console.log('test');
   }
-});
-
-app.directive('compile', function($compile, $parse){
+}]).directive('compile', function($compile, $parse){
     return {
         link: function(scope, element, attr){
             var parsed = $parse(attr.ngBindHtml);
