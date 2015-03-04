@@ -31,30 +31,27 @@ app.controller("VersionController", function($scope, $http, $window, $document) 
 });
 
 app.controller("ViewerController", function($scope, $http, $sce, $compile) {
+  $scope.rawHTML;
+  
   //Load a website into the content div
   $scope.loadContent = function(webpageName) {
     $http.get("includes/".concat(webpageName)).
     success(function(data, status, headers, config) {
       $scope.content = $sce.trustAsHtml(data);
-      //$compile($scope.content)($scope);
     });
   };
 });
 
-app.directive('compile', ['$compile', function ($compile) {
-    return function(scope, element, attrs) {
-        var ensureCompileRunsOnce = scope.$watch(function(scope) {
-            return $sce.parseAsHtml(attrs.compile)(scope);
-        },
-        function(value) {
-            // when the parsed expression changes assign it into the current DOM
-            element.html(value);
-
-            // compile the new DOM and link it to the current scope.
-            $compile(element.contents())(scope);
-
-            // Use un-watch feature to ensure compilation happens only once.
-            ensureCompileRunsOnce();
-        });
-    };
+app.directive('compile', function ($compile) {
+	  return {
+	    restrict: 'A',
+	    replace: true,
+	    link: function (scope, ele, attrs) {
+	      scope.$watch(attrs.dynamic, function(html) {
+	        ele.html(html);
+	        $compile(ele.contents())(scope);
+	      });
+	    }
+	  };
+	});
 }])

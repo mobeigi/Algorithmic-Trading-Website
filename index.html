@@ -33,10 +33,11 @@
         
         <!-- Content -->
         <!-- load homepage initially -->
-        <div ng-bind-html="content" id="content" ng-init="loadContent('home.html')"></div>
+        <div compile="content" ng-init="loadContent('home.html')"></div>
         
-        <!-- end view controller -->
+        
         </div>
+        <!-- end view controller -->
         
         <div ng-include src="'includes/footer.html'"></div>
         
