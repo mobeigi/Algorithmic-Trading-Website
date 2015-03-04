@@ -36,7 +36,7 @@ app.controller("ViewerController", function($scope, $http, $document) {
     $http.get("includes/".concat(webpageName)).
     success(function(data, status, headers, config) {
       var contentElement = $document.find('#content');
-      console.log(contentElement);
+      console.log(data);
       contentElement.replaceWith(data);
     }).
     error(function(data, status, headers, config) {
