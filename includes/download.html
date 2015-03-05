@@ -8,5 +8,32 @@
         <option ng-repeat="deployment in deployments" value="{{deployment.link}}">{{deployment.short_descr}} ({{deployment.os}})</option>
         </select>
         <input class="orbtn" type="submit" ng-click="downloadFile(deploymentURL)" value="Download" />
-    </form>                                                                 
+    </form>  
+    
+    <!-- Description and change log panels describing the selected build -->
+    <br> 
+    <!-- Tabs -->
+    <ul id="buildPanelTabs" class="nav nav-tabs">
+       <li class="active">
+          <a href="#buildDescription" data-toggle="tab">Description</a>
+       </li>
+       <li>
+           <a href="#buildChangeLog" data-toggle="tab">Change Log</a>
+       </li>
+    </ul>  
+    <!-- Panel content -->
+    <div id="buildPanelContent" class="tab-content">
+        <div class="tab-pane in active" id="buildDescription">
+                <br>
+                <p>A product designed to provide the user some advice on financial trades.</p>
+                <p>Release date: x-x-xxxx</p>
+        </div>
+        <div class="tab-pane" id="buildChangeLog">
+            <ul>
+                <br>
+                <li>Added some features</li>
+            </ul>
+        </div>
+    </div>
+    
 </div>
