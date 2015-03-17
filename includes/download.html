@@ -3,8 +3,8 @@
 <div ng-controller="VersionController">
     <form>
         <!-- Drop Down Menu -->
-        <select ng-model="deploymentURL" id="download-dropdown">
-        <option selected="selected" value="">-</option>
+        <select ng-change="showBuildInfo(deploymentURL)" ng-model="deploymentURL" id="download-dropdown">
+        <option selected="selected" value="">Please Select a Version</option>
         <option ng-repeat="deployment in deployments" value="{{deployment.link}}">{{deployment.short_descr}} ({{deployment.os}})</option>
         </select>
         <input class="orbtn" type="submit" ng-click="downloadFile(deploymentURL)" value="Download" />
@@ -12,28 +12,33 @@
     
     <!-- Description and change log panels describing the selected build -->
     <br> 
-    <!-- Tabs -->
-    <ul id="buildPanelTabs" class="nav nav-tabs">
-       <li class="active">
-          <a href="#buildDescription" data-toggle="tab">Description</a>
-       </li>
-       <li>
-           <a href="#buildChangeLog" data-toggle="tab">Change Log</a>
-       </li>
-    </ul>  
-    <!-- Panel content -->
-    <div id="buildPanelContent" class="tab-content">
-        <div class="tab-pane in active" id="buildDescription">
-                <br>
-                <p>A product designed to provide the user some advice on financial trades.</p>
-                <p>Release date: x-x-xxxx</p>
+    
+    <div>
+        
+        <!-- Tabs -->
+        <ul id="buildPanelTabs" class="nav nav-tabs">
+           <li class="active">
+              <a href="#buildDescription" data-toggle="tab">Description</a>
+           </li>
+           <li>
+               <a href="#buildChangeLog" data-toggle="tab">Change Log</a>
+           </li>
+        </ul>  
+
+        <!-- Panel content -->
+        <div id="buildPanelContent" class="tab-content" >
+            <div class="tab-pane in active" id="buildDescription">
+                    <br>        
+                    <div ng-bind-html="info_description"></div>
+                    <br>
+            </div>
+            <div class="tab-pane" id="buildChangeLog">  
+                    <br>
+                    <div ng-bind-html="info_changes"></div>
+                    <br>
+            </div>
         </div>
-        <div class="tab-pane" id="buildChangeLog">
-            <ul>
-                <br>
-                <li>Added some features</li>
-            </ul>
-        </div>
-    </div>
+    
+    </div> 
     
 </div>

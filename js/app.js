@@ -1,8 +1,9 @@
 var app = angular.module("revitpoWeb", []);
 
-app.controller("VersionController", function($scope, $http, $window, $document) {
+app.controller("VersionController", function($scope, $sce, $http, $window, $document) {
 
   $scope.deployments = [];
+  $scope.descriptions = [];
   
   //Retrieve all build versions
   $http.get('json/versions.json').
@@ -14,6 +15,12 @@ app.controller("VersionController", function($scope, $http, $window, $document) 
           short_descr: item1.short_descr,
           link: item2.link,
           os: item2.os
+        });
+          
+          $scope.descriptions.push({
+          link: item2.link,
+          changes: item1.changes,
+          description: item1.description
         });
       });
     });
@@ -28,6 +35,24 @@ app.controller("VersionController", function($scope, $http, $window, $document) 
     }
   };
   
+    
+    $scope.showBuildInfo = function(deploymentURL) {
+        if(typeof deploymentURL === 'undefined' || deploymentURL=="") {
+            $scope.info_description =  $sce.trustAsHtml("Please select a version.");
+            $scope.info_changes =  $sce.trustAsHtml("Please select a version.");
+        }
+        
+        $scope.descriptions.forEach(function(data) {
+           if (data.link == deploymentURL) {
+               $scope.info_description =  $sce.trustAsHtml(data.description);
+               $scope.info_changes =  $sce.trustAsHtml(data.changes);
+           }
+        });
+    };
+    
+    $scope.info_description =  $sce.trustAsHtml("Please select a version.");
+    $scope.info_changes =  $sce.trustAsHtml("Please select a version.");
+    
 });
 
 //Viewer controller is used to dynamically load each page
