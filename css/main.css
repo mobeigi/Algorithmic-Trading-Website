@@ -11,6 +11,8 @@ body {
 #header {
   margin-top: 50px;
   background-color: rgb(200,200,200);
+  border-top-right-radius: 1em;
+  border-top-left-radius: 1em;
 }
 
 #logo {
