@@ -2,6 +2,7 @@ var app = angular.module("revitpoWeb", []);
 
 app.controller("VersionController", function($scope, $sce, $http, $window, $document) {
 
+  //Used to store deployment info, descriptions in scope
   $scope.deployments = [];
   $scope.descriptions = [];
   
@@ -26,6 +27,7 @@ app.controller("VersionController", function($scope, $sce, $http, $window, $docu
     });
   });
   
+  //Function used to trigger file download by means of redirection (window.location)
   $scope.downloadFile = function(deploymentURL) {
     if(typeof deploymentURL === 'undefined' || deploymentURL=="") {
       alert("Please select a deployment version and operating system.");
@@ -35,23 +37,24 @@ app.controller("VersionController", function($scope, $sce, $http, $window, $docu
     }
   };
   
-    
-    $scope.showBuildInfo = function(deploymentURL) {
-        if(typeof deploymentURL === 'undefined' || deploymentURL=="") {
-            $scope.info_description =  $sce.trustAsHtml("Please select a version.");
-            $scope.info_changes =  $sce.trustAsHtml("Please select a version.");
-        }
-        
-        $scope.descriptions.forEach(function(data) {
-           if (data.link == deploymentURL) {
-               $scope.info_description =  $sce.trustAsHtml(data.description);
-               $scope.info_changes =  $sce.trustAsHtml(data.changes);
-           }
-        });
-    };
-    
-    $scope.info_description =  $sce.trustAsHtml("Please select a version.");
-    $scope.info_changes =  $sce.trustAsHtml("Please select a version.");
+  //Function used to display build info once program version is selected
+  $scope.showBuildInfo = function(deploymentURL) {
+      if(typeof deploymentURL === 'undefined' || deploymentURL=="") {
+          $scope.info_description =  $sce.trustAsHtml("Please select a version.");
+          $scope.info_changes =  $sce.trustAsHtml("Please select a version.");
+      }
+      
+      $scope.descriptions.forEach(function(data) {
+         if (data.link == deploymentURL) {
+             $scope.info_description =  $sce.trustAsHtml(data.description);
+             $scope.info_changes =  $sce.trustAsHtml(data.changes);
+         }
+      });
+  };
+  
+  //Set default description and change box values
+  $scope.info_description =  $sce.trustAsHtml("Please select a version.");
+  $scope.info_changes =  $sce.trustAsHtml("Please select a version.");
     
 });
 
