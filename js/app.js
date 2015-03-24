@@ -84,8 +84,18 @@ app.controller("ViewerController", ['$scope','$sce', '$location', '$http', '$com
   };
   
   //Get url and load content if url is not blank
-  if ($location.path() != "")
-    $scope.loadContent($location.path().substring(1) + ".html"); //remove first / char from url
+  if ($location.path() != "") {
+    //Check if file exists
+    var request = new XMLHttpRequest();
+    request.open('HEAD', "/includes" + $location.path() + ".html", false);
+    request.send();
+    
+    if(request.status == 200) {
+      $scope.loadContent($location.path().substring(1) + ".html"); //remove first / char from url
+    }
+    else
+      console.log("error!");
+  }
   
 }]).directive('compile', function($compile, $parse) {
   return {
