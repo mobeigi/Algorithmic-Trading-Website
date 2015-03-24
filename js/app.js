@@ -99,7 +99,7 @@ app.controller("ViewerController", ['$scope','$sce', '$location', '$timeout', '$
     }
     //Otherwise load the 404 page
     else
-      $scope.loadContent("404.html");
+      $timeout(function() { $scope.loadContent("404.html");}, 200);
   }
   
 }]).directive('compile', function($compile, $parse) {
