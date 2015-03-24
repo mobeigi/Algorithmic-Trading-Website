@@ -90,11 +90,12 @@ app.controller("ViewerController", ['$scope','$sce', '$location', '$http', '$com
     request.open('HEAD', "/includes" + $location.path() + ".html", false);
     request.send();
     
-    if(request.status == 200) {
-      $scope.loadContent($location.path().substring(1) + ".html"); //remove first / char from url
-    }
+    //If file exists load proper page
+    if(request.status == 200)
+      $scope.loadContent($location.path().substring(1) + ".html"); //remove first '/' char from url
+    //Otherwise load the 404 page
     else
-      console.log("error!");
+      $scope.loadContent("404.html");
   }
   
 }]).directive('compile', function($compile, $parse) {
