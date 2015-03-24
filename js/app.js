@@ -57,7 +57,7 @@ app.controller("VersionController", function($scope, $sce, $http, $window, $docu
               osImage = "/images/linux.png";
              
              $scope.info_description =  $sce.trustAsHtml(
-             "<img src=\"" + osImage + "\" />" + "<strong>Date: </strong>" + data.date + "<br />" + data.description);
+             "<strong>OS:</strong><img src=\"" + osImage + "\" /><br />" + "<strong>Date: </strong>" + data.date + "<br /><br />" + data.description);
 
              $scope.info_changes =  $sce.trustAsHtml("<li>" + data.changes.split("|").join("</li><li>") + "</li>");
          }
