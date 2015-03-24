@@ -53,12 +53,12 @@ app.controller("VersionController", function($scope, $sce, $http, $window, $docu
              //Determine OS Image
              if (data.os == "Windows")
               osImage = "/images/windows.png";
-             else if (data.os == "Linux)
+             else if (data.os == "Linux")
               osImage = "/images/linux.png";
              
              $scope.info_description =  $sce.trustAsHtml(
              "<img src=\"" + osImage + "\" />" + "<strong>Date: </strong>" + data.date + "<br />" + data.description);
-             
+
              $scope.info_changes =  $sce.trustAsHtml("<li>" + data.changes.split("|").join("</li><li>") + "</li>");
          }
       });
