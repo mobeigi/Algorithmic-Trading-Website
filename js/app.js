@@ -48,7 +48,8 @@ app.controller("VersionController", function($scope, $sce, $http, $window, $docu
       $scope.descriptions.forEach(function(data) {
          if (data.link == deploymentURL) {
              $scope.info_description =  $sce.trustAsHtml("<strong>Date: </strong>" + data.date + "<br />" + data.description);
-             $scope.info_changes =  $sce.trustAsHtml(data.changes);
+             $
+             $scope.info_changes =  $sce.trustAsHtml("<li>" + data.changes.replace('|', '</li><li>') + "</li>");
          }
       });
   };

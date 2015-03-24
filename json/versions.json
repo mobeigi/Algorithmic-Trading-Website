@@ -4,7 +4,7 @@
         "date": "24-03-2015 14:30:00",
         "description": "This is the first release of the Revitpo Algorithmic Trading program.",
         "short_descr": "v1.00 [LATEST]",
-        "changes": "Initial Release",
+        "changes": "Initial Release|Added feature 1|Added feature 2",
         "links": [
             {
                 "os": "Windows",
