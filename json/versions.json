@@ -1,26 +1,9 @@
 [
     {
-        "version": "1.01",
-        "date": "24-02-201514: 30: 00",
-        "description": "Major Update 1",
-        "short_descr": "v1.01 [LATEST]",
-        "changes": "Added Example Algorithm",
-        "links": [
-            {
-                "os": "Windows",
-                "link": "builds/windows/101-win.exe"
-            },
-            {
-                "os": "Linux",
-                "link": "builds/linux/101-linux"
-            }
-        ]
-    },
-    {
         "version": "1.00",
         "date": "24-02-201514: 30: 00",
         "description": "Initial Release",
-        "short_descr": "v1.00",
+        "short_descr": "v1.00 [LATEST]",
         "changes": "No Changes",
         "links": [
             {

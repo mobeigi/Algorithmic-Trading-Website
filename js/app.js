@@ -21,7 +21,8 @@ app.controller("VersionController", function($scope, $sce, $http, $window, $docu
           $scope.descriptions.push({
           link: item2.link,
           changes: item1.changes,
-          description: item1.description
+          description: item1.description,
+          date: item1.date
         });
       });
     });
@@ -46,7 +47,7 @@ app.controller("VersionController", function($scope, $sce, $http, $window, $docu
       
       $scope.descriptions.forEach(function(data) {
          if (data.link == deploymentURL) {
-             $scope.info_description =  $sce.trustAsHtml(data.description);
+             $scope.info_description =  $sce.trustAsHtml("Date: " + data.date + "<br />" + data.description);
              $scope.info_changes =  $sce.trustAsHtml(data.changes);
          }
       });
