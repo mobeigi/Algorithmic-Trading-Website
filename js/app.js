@@ -19,6 +19,7 @@ app.controller("VersionController", function($scope, $sce, $http, $window, $docu
         });
           
           $scope.descriptions.push({
+          version: item1.version,
           link: item2.link,
           changes: item1.changes,
           description: item1.description,
@@ -57,6 +58,7 @@ app.controller("VersionController", function($scope, $sce, $http, $window, $docu
               osImage = "/images/linux.png";
              
              $scope.info_description =  $sce.trustAsHtml(
+             "<strong>Version: </strong>" + data.version + "<br />" +
              "<strong>OS: </strong><img src=\"" + osImage + "\" /> " + data.os + "<br />" + "<strong>Date: </strong>" + data.date + "<br /><br />" + data.description);
 
              $scope.info_changes =  $sce.trustAsHtml("<li>" + data.changes.split("|").join("</li><li>") + "</li>");
