@@ -80,3 +80,8 @@ footer div.box {
   background: #ff8170;
   text-decoration: none;
 }
+
+p.loader {
+  margin: 0 auto;
+  display: block;
+}

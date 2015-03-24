@@ -83,8 +83,11 @@ app.controller("ViewerController", ['$scope','$sce', '$location', '$timeout', '$
     });
   };
   
-  //Get url and load content if url is not blank
-  if ($location.path() != "") {
+  //Get url and load content
+  if ($location.path() == "") {
+    $scope.loadContent("home.html");
+  }
+  else {
     //Check if file exists
     var request = new XMLHttpRequest();
     request.open('HEAD', "/includes" + $location.path() + ".html", false);
@@ -92,7 +95,7 @@ app.controller("ViewerController", ['$scope','$sce', '$location', '$timeout', '$
     
     //If file exists load proper page
     if(request.status == 200) {
-      $timeout(function() { $scope.loadContent($location.path().substring(1) + ".html");}, 100); //remove first '/' char from url
+      $timeout(function() { $scope.loadContent($location.path().substring(1) + ".html");}, 500); //remove first '/' char from url
     }
     //Otherwise load the 404 page
     else
