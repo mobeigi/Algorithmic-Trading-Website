@@ -73,7 +73,7 @@ app.controller("VersionController", function($scope, $sce, $http, $window, $docu
 });
 
 //Viewer controller is used to dynamically load each page
-app.controller("ViewerController", ['$scope','$sce', '$location', '$http', '$compile', function ViewerController($scope, $sce, $http, $compile) {
+app.controller("ViewerController", ['$scope','$sce', '$location', '$http', '$compile', function ViewerController($scope, $sce, $location, $http, $compile) {
   
   //get url
   console.log($location.path());
