@@ -22,7 +22,8 @@ app.controller("VersionController", function($scope, $sce, $http, $window, $docu
           link: item2.link,
           changes: item1.changes,
           description: item1.description,
-          date: item1.date
+          date: item1.date,
+          os: item2.os,
         });
       });
     });
@@ -47,8 +48,17 @@ app.controller("VersionController", function($scope, $sce, $http, $window, $docu
       
       $scope.descriptions.forEach(function(data) {
          if (data.link == deploymentURL) {
-             $scope.info_description =  $sce.trustAsHtml("<strong>Date: </strong>" + data.date + "<br />" + data.description);
-             $
+             var osImage = "";
+             
+             //Determine OS Image
+             if (data.os == "Windows")
+              osImage = "/images/windows.png";
+             else if (data.os == "Linux)
+              osImage = "/images/linux.png";
+             
+             $scope.info_description =  $sce.trustAsHtml(
+             "<img src=\"" + osImage + "\" />" + "<strong>Date: </strong>" + data.date + "<br />" + data.description);
+             
              $scope.info_changes =  $sce.trustAsHtml("<li>" + data.changes.split("|").join("</li><li>") + "</li>");
          }
       });
