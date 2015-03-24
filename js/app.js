@@ -73,7 +73,7 @@ app.controller("VersionController", function($scope, $sce, $http, $window, $docu
 });
 
 //Viewer controller is used to dynamically load each page
-app.controller("ViewerController", ['$scope','$sce', '$location', '$http', '$compile', function ViewerController($scope, $sce, $location, $http, $compile) {
+app.controller("ViewerController", ['$scope','$sce', '$location', '$timeout', '$http', '$compile', function ViewerController($scope, $sce, $location, $timeout, $http, $compile) {
   
   //Load a website into the content div
   $scope.loadContent = function(webpageName) {
@@ -92,7 +92,7 @@ app.controller("ViewerController", ['$scope','$sce', '$location', '$http', '$com
     
     //If file exists load proper page
     if(request.status == 200) {
-      $scope.loadContent($location.path().substring(1) + ".html"); //remove first '/' char from url
+      $timeout($scope.loadContent($location.path().substring(1) + ".html"), 1000); //remove first '/' char from url
       console.log("Loaded:" + $location.path().substring(1) + ".html");
     }
     //Otherwise load the 404 page
