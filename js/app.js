@@ -92,7 +92,7 @@ app.controller("ViewerController", ['$scope','$sce', '$location', '$timeout', '$
     
     //If file exists load proper page
     if(request.status == 200) {
-      $timeout($scope.loadContent($location.path().substring(1) + ".html"), 1000); //remove first '/' char from url
+      $timeout(function() { $scope.loadContent($location.path().substring(1) + ".html");}, 1000); //remove first '/' char from url
       console.log("Loaded:" + $location.path().substring(1) + ".html");
     }
     //Otherwise load the 404 page
