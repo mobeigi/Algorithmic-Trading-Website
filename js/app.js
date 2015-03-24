@@ -75,10 +75,6 @@ app.controller("VersionController", function($scope, $sce, $http, $window, $docu
 //Viewer controller is used to dynamically load each page
 app.controller("ViewerController", ['$scope','$sce', '$location', '$http', '$compile', function ViewerController($scope, $sce, $location, $http, $compile) {
   
-  //Get url and load content if url is not blank
-  if ($location.path() != "")
-    $scope.loadContent($location.path().substring(1) + ".html"); //remove first / char from url
-  
   //Load a website into the content div
   $scope.loadContent = function(webpageName) {
     $http.get("includes/".concat(webpageName)).
@@ -86,6 +82,11 @@ app.controller("ViewerController", ['$scope','$sce', '$location', '$http', '$com
       $scope.content =  $sce.trustAsHtml(data);
     });
   };
+  
+  //Get url and load content if url is not blank
+  if ($location.path() != "")
+    $scope.loadContent($location.path().substring(1) + ".html"); //remove first / char from url
+  
 }]).directive('compile', function($compile, $parse) {
   return {
     link: function(scope, element, attr) {
