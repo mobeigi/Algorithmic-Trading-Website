@@ -77,7 +77,7 @@ app.controller("ViewerController", ['$scope','$sce', '$location', '$http', '$com
   
   //Get url and load content if url is not blank
   if ($location.path() != "")
-    loadContent($location.path().substring(1) + ".html"); //remove first / char from url
+    $scope.loadContent($location.path().substring(1) + ".html"); //remove first / char from url
   
   //Load a website into the content div
   $scope.loadContent = function(webpageName) {
