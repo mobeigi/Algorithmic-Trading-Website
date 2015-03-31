@@ -53,6 +53,8 @@ footer div.box {
 }
 
 #download-dropdown {
+  border-radius: 8px 8px 8px 8px;
+  text-indent: 10px;
   width: 30%;
   height: 30px;
   font-size: 18px;
