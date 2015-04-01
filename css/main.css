@@ -6,6 +6,7 @@ body {
 	margin:0;
 	padding:0;
 	height:100%;
+  background: url('/images/bg-repeat.jpg');
 }
 
 #header {
@@ -86,4 +87,22 @@ footer div.box {
 p.loader img {
   margin: 0 auto;
   display: block;
+}
+
+.nav-tabs {
+ border-bottom: none !important;
+}
+
+#navbarContainer {
+  background-color: #FFF;
+  border-radius: 0px 0px 10px 10px;
+  border-bottom: 1px #DDD dashed;
+}
+
+#contentContainer {
+  background-color: #FFF;
+  padding: 10px;
+  border-radius: 20px 20px 20px 20px;
+  margin-top: 20px;
+  border: 2px #E6E6E6 solid;
 }

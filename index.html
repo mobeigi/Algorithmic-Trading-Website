@@ -34,11 +34,11 @@
         
         <div ng-include src="'includes/header.html'"></div>
        
-        <div ng-include src="'includes/navbar.html'"></div>
+        <div ng-include src="'includes/navbar.html'" id="navbarContainer"></div>
         
         <!-- Content -->
         <!-- load homepage initially -->
-        <div ng-bind-html="content" ng-init="loadContent('loader.html')" compile></div>
+        <div ng-bind-html="content" ng-init="loadContent('loader.html')" compile id="contentContainer"></div>
         
         
         </div>
