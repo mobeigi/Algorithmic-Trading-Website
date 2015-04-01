@@ -1,4 +1,4 @@
-var app = angular.module("revitpoWeb", []);
+var app = angular.module("trockWeb", []);
 
 app.controller("VersionController", function($scope, $sce, $http, $window, $document) {
 
