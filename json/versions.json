@@ -2,23 +2,23 @@
     {
         "version": "1.00",
         "date": "01-04-2015 15:00:00",
-        "description": "This is the first release of the Revitpo Algorithmic Trading program.",
+        "description": "This is the first release of the Trock Algorithmic Trading program.",
         "short_descr": "v1.00 [LATEST]",
         "changes": "Initial Release",
         "links": [
             {
                 "os": "Windows",
-                "link": "builds/windows/revitpo.algorithmic.trading.windows.v1.00.zip",
-                "SHA1checksum": "0ba1e85a1dc214a7b779fedda82027a6f80486ef"
+                "link": "builds/windows/trock.algorithmic.trading.windows.v1.00.zip",
+                "SHA1checksum": "1ef92edcf65a2d7bee69a36f4335a1531e005a7f"
             },
             {
                 "os": "Mac OS",
-                "link": "builds/mac/revitpo.algorithmic.trading.mac.v1.00.zip",
+                "link": "builds/mac/trock.algorithmic.trading.mac.v1.00.zip",
                 "SHA1checksum": "25988810e6f92dc2f9a2b181071ceef38030b190"
             },
             {
                 "os": "Linux",
-                "link": "builds/linux/revitpo.algorithmic.trading.linux.v1.00.zip",
+                "link": "builds/linux/trock.algorithmic.trading.linux.v1.00.zip",
                 "SHA1checksum": "e0d40385c9df1519f822c63028eb647774069a20"
             }
         ]
