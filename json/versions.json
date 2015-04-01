@@ -14,12 +14,12 @@
             {
                 "os": "Mac OS",
                 "link": "builds/mac/revitpo.algorithmic.trading.mac.v1.00.zip",
-                "SHA1checksum": "25988810e6f92dc2f9a2b181071ceef38030b190"
+                "SHA1checksum": "71477098955d44d66a5370e364d81121fa5f5004"
             },
             {
                 "os": "Linux",
                 "link": "builds/linux/revitpo.algorithmic.trading.linux.v1.00.zip",
-                "SHA1checksum": "e0d40385c9df1519f822c63028eb647774069a20"
+                "SHA1checksum": "8286bfabd98f33b80b928b0d7008f2809b0a2c05"
             }
         ]
     }
