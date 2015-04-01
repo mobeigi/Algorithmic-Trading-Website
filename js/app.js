@@ -54,6 +54,8 @@ app.controller("VersionController", function($scope, $sce, $http, $window, $docu
              //Determine OS Image
              if (data.os == "Windows")
               osImage = "/images/windows.png";
+             else if (data.os == "Mac OS")
+              osImage = "/images/macos.png.png";
              else if (data.os == "Linux")
               osImage = "/images/linux.png";
              
