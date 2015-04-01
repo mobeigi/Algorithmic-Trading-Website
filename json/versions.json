@@ -8,15 +8,18 @@
         "links": [
             {
                 "os": "Windows",
-                "link": "builds/windows/revitpo.algorithmic.trading.windows.v1.00.zip"
+                "link": "builds/windows/revitpo.algorithmic.trading.windows.v1.00.zip",
+                "SHA1checksum": "0ba1e85a1dc214a7b779fedda82027a6f80486ef"
             },
             {
                 "os": "Mac OS",
                 "link": "builds/windows/revitpo.algorithmic.trading.mac.v1.00.zip"
+                "SHA1checksum": ""
             },
             {
                 "os": "Linux",
                 "link": "builds/linux/revitpo.algorithmic.trading.linux.v1.00.zip"
+                "SHA1checksum": "e0d40385c9df1519f822c63028eb647774069a20"
             }
         ]
     }

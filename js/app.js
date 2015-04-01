@@ -25,6 +25,7 @@ app.controller("VersionController", function($scope, $sce, $http, $window, $docu
           description: item1.description,
           date: item1.date,
           os: item2.os,
+          checksum: item2.SHA1checksum
         });
       });
     });
@@ -61,7 +62,7 @@ app.controller("VersionController", function($scope, $sce, $http, $window, $docu
              
              $scope.info_description =  $sce.trustAsHtml(
              "<strong>Version: </strong>" + data.version + "<br />" +
-             "<strong>OS: </strong><img src=\"" + osImage + "\" /> " + data.os + "<br />" + "<strong>Date: </strong>" + data.date + "<br /><br />" + data.description);
+             "<strong>OS: </strong><img src=\"" + osImage + "\" /> " + data.os + "<br />" + "<strong>Date: </strong>" + data.date + "<br />" + "<strong>SHA-1 Checksum: </strong>" + data.checksum + "<br /><br />" + data.description);
 
              $scope.info_changes =  $sce.trustAsHtml("<li>" + data.changes.split("|").join("</li><li>") + "</li>");
          }
