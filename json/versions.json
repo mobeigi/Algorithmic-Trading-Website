@@ -1,18 +1,22 @@
 [
     {
         "version": "1.00",
-        "date": "24-03-2015 14:30:00",
+        "date": "01-04-2015 15:00:00",
         "description": "This is the first release of the Revitpo Algorithmic Trading program.",
         "short_descr": "v1.00 [LATEST]",
-        "changes": "Initial Release|Added feature 1|Added feature 2",
+        "changes": "Initial Release",
         "links": [
             {
                 "os": "Windows",
-                "link": "builds/windows/100-win.exe"
+                "link": "builds/windows/revitpo.algorithmic.trading.windows.v1.00.zip"
+            },
+            {
+                "os": "Mac OS",
+                "link": "builds/windows/revitpo.algorithmic.trading.mac.v1.00.zip"
             },
             {
                 "os": "Linux",
-                "link": "builds/linux/100-linux"
+                "link": "builds/linux/revitpo.algorithmic.trading.linux.v1.00.zip"
             }
         ]
     }

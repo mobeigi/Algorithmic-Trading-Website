@@ -1,8 +1,0 @@
-{ 'testdata': [ 
-	{
-		'name':'BHP.AX Test Data',
-		'description':'Data from the BHP trading in Australia Since 2000',
-		'short_descr':'Data from the BHP trading in Australia Since 2000',
-		'link':'/testdata/BHP_Daily_Since2000.csv'
-	}
-] }
