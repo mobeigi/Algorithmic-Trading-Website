@@ -42,10 +42,16 @@ app.controller("VersionController", function($scope, $sce, $http, $window, $docu
     else {
       $scope.deployments.forEach(function(data) {
       if (data.id == deploymentID) {
+        var downlink;
         if (type == 1)
-          $window.location.href = "/".concat(data.link);
+          downlink == data.link;
         else if (type == 2)
-          $window.location.href = "/".concat(data.link_testingplatform);
+          downlink == data.link_testingplatform;
+          
+        if (downlink == "")
+          alert("This download is not available for the selected version.");
+        else
+          $window.location.href = "/".concat(downlink);
       }
       });
     }
