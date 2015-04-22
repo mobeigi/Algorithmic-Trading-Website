@@ -81,7 +81,7 @@ app.controller("VersionController", function($scope, $sce, $http, $window, $docu
              
              $scope.info_description =  $sce.trustAsHtml(
              "<strong>Version: </strong>" + data.version + "<br />" +
-             "<strong>OS: </strong><img src=\"" + osImage + "\" /> " + data.os + "<br />" + "<strong>Date: </strong>" + data.date + "<br />" + "<strong>TrockAT Standalone SHA-1 Checksum: </strong>" + data.checksum + "<strong>Testing Platform (GUI) SHA-1 Checksum: </strong>" + data.checksum_testingplatform + "<br /><br />" + data.description);
+             "<strong>OS: </strong><img src=\"" + osImage + "\" /> " + data.os + "<br />" + "<strong>Date: </strong>" + data.date + "<br />" + "<strong>TrockAT Standalone SHA-1 Checksum: </strong>" + data.checksum + "<br />" + "<strong>Testing Platform (GUI) SHA-1 Checksum: </strong>" + data.checksum_testingplatform + "<br /><br />" + data.description);
 
              $scope.info_changes =  $sce.trustAsHtml("<li>" + data.changes.split("|").join("</li><li>") + "</li>");
              $scope.info_changes_testingplatform =  $sce.trustAsHtml("<li>" + data.changes_testingplatform.split("|").join("</li><li>") + "</li>");
