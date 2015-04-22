@@ -14,7 +14,7 @@ app.controller("VersionController", function($scope, $sce, $http, $window, $docu
       item1.links.forEach(function(item2) {
         $scope.deployments.push({
           short_descr: item1.short_descr,
-          link: item2.link,
+          id: item2.id,
           os: item2.os
         });
           

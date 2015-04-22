@@ -7,7 +7,7 @@
         <!-- Drop Down Menu -->
         <select ng-change="showBuildInfo(deploymentURL)" ng-model="deploymentURL" id="download-dropdown">
         <option selected="selected" value="">Please Select a Version</option>
-        <option ng-repeat="deployment in deployments" value="{{deployment.link}}">{{deployment.short_descr}} ({{deployment.os}})</option>
+        <option ng-repeat="deployment in deployments" value="{{deployment.id}}">{{deployment.short_descr}} ({{deployment.os}})</option>
         </select>
         <input class="orbtn" type="submit" ng-click="downloadFile(deploymentURL)" value="Download" />
     </form>  

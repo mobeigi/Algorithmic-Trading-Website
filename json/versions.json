@@ -7,18 +7,21 @@
         "changes": "Change 1 | Change 2 | Change 3",
         "links": [
             {
+                "id": "110win",
                 "os": "Windows",
                 "link": "builds/windows/trock.algorithmic.trading.windows.v1.00.zip",
                 "link_testingplatform" : "",
                 "SHA1checksum": "6834a46381794c6589ef18a086948e461d315d20"
             },
             {
+                "id": "110mac",
                 "os": "Mac OS",
                 "link": "builds/mac/trock.algorithmic.trading.mac.v1.00.zip",
                 "link_testingplatform" : "",
                 "SHA1checksum": "71477098955d44d66a5370e364d81121fa5f5004"
             },
             {
+                "id": "110lin",
                 "os": "Linux",
                 "link": "builds/linux/trock.algorithmic.trading.linux.v1.00.zip",
                 "link_testingplatform" : "",
@@ -34,18 +37,21 @@
         "changes": "Initial Release",
         "links": [
             {
+                "id": "100win",
                 "os": "Windows",
                 "link": "builds/windows/trock.algorithmic.trading.windows.v1.00.zip",
                 "link_testingplatform" : "",
                 "SHA1checksum": "6834a46381794c6589ef18a086948e461d315d20"
             },
             {
+                "id": "100mac",
                 "os": "Mac OS",
                 "link": "builds/mac/trock.algorithmic.trading.mac.v1.00.zip",
                 "link_testingplatform" : "",
                 "SHA1checksum": "71477098955d44d66a5370e364d81121fa5f5004"
             },
             {
+                "id": "100lin",
                 "os": "Linux",
                 "link": "builds/linux/trock.algorithmic.trading.linux.v1.00.zip",
                 "link_testingplatform" : "",
