@@ -44,9 +44,9 @@ app.controller("VersionController", function($scope, $sce, $http, $window, $docu
       if (data.id == deploymentID) {
         var downlink;
         if (type == 1)
-          downlink == data.link;
+          downlink = data.link;
         else if (type == 2)
-          downlink == data.link_testingplatform;
+          downlink = data.link_testingplatform;
           
         if (downlink == "")
           alert("This download is not available for the selected version.");
