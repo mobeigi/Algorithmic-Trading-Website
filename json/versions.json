@@ -10,7 +10,7 @@
                 "id": "110win",
                 "os": "Windows",
                 "link": "builds/windows/trock.algorithmic.trading.windows.v1.00.zip",
-                "link_testingplatform" : "",
+                "link_testingplatform" : "builds/windows/trock.algorithmic.trading.windows.v1.00.zip",
                 "SHA1checksum": "6834a46381794c6589ef18a086948e461d315d20"
             },
             {
