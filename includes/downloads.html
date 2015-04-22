@@ -9,7 +9,9 @@
         <option selected="selected" value="">Please Select a Version</option>
         <option ng-repeat="deployment in deployments" value="{{deployment.id}}">{{deployment.short_descr}} ({{deployment.os}})</option>
         </select>
-        <input class="orbtn" type="submit" ng-click="downloadFile(1, deploymentID)" value="Download" />
+        <input class="orbtn" type="submit" ng-click="downloadFile(1, deploymentID)" value="Download TrockAT Standalone" />
+        &nbsp;
+        <input class="orbtn" type="submit" ng-click="downloadFile(2, deploymentID)" value="Download Testing Platform (GUI)" />
     </form>  
     
     <!-- Description and change log panels describing the selected build -->
