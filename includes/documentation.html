@@ -54,7 +54,7 @@
         <td><b>Description</b></td>		
       </tr>
       <tr>
-        <td>input_csvFile</td>
+        <td>input_csvFile*</td>
         <td>Link to the input csv file. The file is respective to the directory of where the trockAT application is located</td>		
       </tr>
       <tr>
@@ -66,17 +66,19 @@
         <td>Directory for the file containing orders</td>		
       </tr>
       <tr>
-        <td>threshold</td>
+        <td>threshold*</td>
         <td>A higher threshold will result in the strategy to generate less buy/sell signals</td>		
       </tr>
       <tr>
-        <td>returnsInCalculation</td>
+        <td>returnsInCalculation*</td>
         <td>Number of days that a trade has occurred used to calculate the <i>last moving average</i></td>		
       </tr>
       <tr>
-        <td>startDate, endDate</td>
-        <td>The period when trading can occur. Each date must be expressed in the format 'DD-MMM-YYYY'</td>
+        <td>startDate, endDate**</td>
+        <td>The period when trading can occur. Each date must be expressed in the format 'DD-MMM-YYYY'.</td>
       </tr>
     </table>
+	<p><i>* this field cannot be empty<i></p>
+	<p><i>** if a starting date is provided, there must also be an end date provided
     
 </div>
