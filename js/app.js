@@ -15,6 +15,7 @@ app.controller("VersionController", function($scope, $sce, $http, $window, $docu
         $scope.deployments.push({
           short_descr: item1.short_descr,
           id: item2.id,
+          link: item2.link,
           os: item2.os
         });
           
@@ -32,12 +33,17 @@ app.controller("VersionController", function($scope, $sce, $http, $window, $docu
   });
   
   //Function used to trigger file download by means of redirection (window.location)
-  $scope.downloadFile = function(deploymentURL) {
-    if(typeof deploymentURL === 'undefined' || deploymentURL=="") {
+  $scope.downloadFile = function(downloadID) {
+    if(typeof downloadID === 'undefined' || downloadID=="") {
       alert("Please select a deployment version and operating system.");
     }
     else {
-      $window.location.href = "/".concat(deploymentURL);
+      $scope.deployments.forEach(function(data) {
+      if (data.id == downloadID) {
+        $window.location.href = "/".concat(data.link);
+      }
+      
+      });
     }
   };
   
