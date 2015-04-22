@@ -29,7 +29,8 @@ app.controller("VersionController", function($scope, $sce, $http, $window, $docu
           description: item1.description,
           date: item1.date,
           os: item2.os,
-          checksum: item2.SHA1checksum
+          checksum: item2.SHA_link,
+          checksum_testingplatform: item2.SHA_link_testingplatform
         });
       });
     });
@@ -80,7 +81,7 @@ app.controller("VersionController", function($scope, $sce, $http, $window, $docu
              
              $scope.info_description =  $sce.trustAsHtml(
              "<strong>Version: </strong>" + data.version + "<br />" +
-             "<strong>OS: </strong><img src=\"" + osImage + "\" /> " + data.os + "<br />" + "<strong>Date: </strong>" + data.date + "<br />" + "<strong>SHA-1 Checksum: </strong>" + data.checksum + "<br /><br />" + data.description);
+             "<strong>OS: </strong><img src=\"" + osImage + "\" /> " + data.os + "<br />" + "<strong>Date: </strong>" + data.date + "<br />" + "<strong>TrockAT Standalone SHA-1 Checksum: </strong>" + data.checksum + "<strong>Testing Platform (GUI) SHA-1 Checksum: </strong>" + data.checksum_testingplatform + "<br /><br />" + data.description);
 
              $scope.info_changes =  $sce.trustAsHtml("<li>" + data.changes.split("|").join("</li><li>") + "</li>");
              $scope.info_changes_testingplatform =  $sce.trustAsHtml("<li>" + data.changes_testingplatform.split("|").join("</li><li>") + "</li>");
