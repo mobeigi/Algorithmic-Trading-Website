@@ -9,7 +9,7 @@
         <option selected="selected" value="">Please Select a Version</option>
         <option ng-repeat="deployment in deployments" value="{{deployment.id}}">{{deployment.short_descr}} ({{deployment.os}})</option>
         </select>
-        <input class="orbtn" type="submit" ng-click="downloadFile(deploymentID)" value="Download" />
+        <input class="orbtn" type="submit" ng-click="downloadFile(1, deploymentID)" value="Download" />
     </form>  
     
     <!-- Description and change log panels describing the selected build -->
