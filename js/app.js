@@ -16,11 +16,13 @@ app.controller("VersionController", function($scope, $sce, $http, $window, $docu
           short_descr: item1.short_descr,
           id: item2.id,
           link: item2.link,
+          link_testingplatform: item2.link_testingplatform,
           os: item2.os
         });
           
           $scope.descriptions.push({
           version: item1.version,
+          id: item2.id,
           link: item2.link,
           changes: item1.changes,
           description: item1.description,
@@ -33,29 +35,31 @@ app.controller("VersionController", function($scope, $sce, $http, $window, $docu
   });
   
   //Function used to trigger file download by means of redirection (window.location)
-  $scope.downloadFile = function(downloadID) {
-    if(typeof downloadID === 'undefined' || downloadID=="") {
+  $scope.downloadFile = function(type, deploymentID) {
+    if(typeof deploymentID === 'undefined' || deploymentID == "") {
       alert("Please select a deployment version and operating system.");
     }
     else {
       $scope.deployments.forEach(function(data) {
-      if (data.id == downloadID) {
-        $window.location.href = "/".concat(data.link);
+      if (data.id == deploymentID) {
+        if (type == 1)
+          $window.location.href = "/".concat(data.link);
+        else if (type == 2)
+          $window.location.href = "/".concat(data.link_testingplatform);
       }
-      
       });
     }
   };
   
   //Function used to display build info once program version is selected
-  $scope.showBuildInfo = function(deploymentURL) {
-      if(typeof deploymentURL === 'undefined' || deploymentURL=="") {
+  $scope.showBuildInfo = function(deploymentID) {
+      if(typeof deploymentID === 'undefined' || deploymentID == "") {
           $scope.info_description =  $sce.trustAsHtml("Please select a version.");
           $scope.info_changes =  $sce.trustAsHtml("Please select a version.");
       }
       
       $scope.descriptions.forEach(function(data) {
-         if (data.link == deploymentURL) {
+         if (data.id == deploymentID) {
              var osImage = "";
              
              //Determine OS Image
