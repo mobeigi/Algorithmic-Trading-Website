@@ -5,6 +5,7 @@
         "description": "Desc desc.",
         "short_descr": "v1.10 [LATEST]",
         "changes": "Change 1 | Change 2 | Change 3",
+        "changes_testingplatform": "Change 1 | Change 2 | Change 3",
         "links": [
             {
                 "id": "110win",
@@ -35,6 +36,7 @@
         "description": "This is the first release of the Trock Algorithmic Trading program.",
         "short_descr": "v1.00",
         "changes": "Initial Release",
+        "changes_testingplatform": "N/A",
         "links": [
             {
                 "id": "100win",

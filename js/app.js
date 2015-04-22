@@ -25,6 +25,7 @@ app.controller("VersionController", function($scope, $sce, $http, $window, $docu
           id: item2.id,
           link: item2.link,
           changes: item1.changes,
+          changes_testingplatform: item1.changes_testingplatform,
           description: item1.description,
           date: item1.date,
           os: item2.os,
@@ -62,6 +63,7 @@ app.controller("VersionController", function($scope, $sce, $http, $window, $docu
       if(typeof deploymentID === 'undefined' || deploymentID == "") {
           $scope.info_description =  $sce.trustAsHtml("Please select a version.");
           $scope.info_changes =  $sce.trustAsHtml("Please select a version.");
+          $scope.info_changes_testingplatform = $sce.trustAsHtml("");
       }
       
       $scope.descriptions.forEach(function(data) {
@@ -81,6 +83,7 @@ app.controller("VersionController", function($scope, $sce, $http, $window, $docu
              "<strong>OS: </strong><img src=\"" + osImage + "\" /> " + data.os + "<br />" + "<strong>Date: </strong>" + data.date + "<br />" + "<strong>SHA-1 Checksum: </strong>" + data.checksum + "<br /><br />" + data.description);
 
              $scope.info_changes =  $sce.trustAsHtml("<li>" + data.changes.split("|").join("</li><li>") + "</li>");
+             $scope.info_changes_testingplatform =  $sce.trustAsHtml("<li>" + data.changes_testingplatform.split("|").join("</li><li>") + "</li>");
          }
       });
   };
@@ -88,7 +91,8 @@ app.controller("VersionController", function($scope, $sce, $http, $window, $docu
   //Set default description and change box values
   $scope.info_description =  $sce.trustAsHtml("Please select a version.");
   $scope.info_changes =  $sce.trustAsHtml("Please select a version.");
-    
+  $scope.info_changes_testingplatform = $sce.trustAsHtml("");
+
 });
 
 //Viewer controller is used to dynamically load each page
