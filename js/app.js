@@ -63,8 +63,8 @@ app.controller("VersionController", function($scope, $sce, $http, $window, $docu
   $scope.showBuildInfo = function(deploymentID) {
       if(typeof deploymentID === 'undefined' || deploymentID == "") {
           $scope.info_description =  $sce.trustAsHtml("Please select a version.");
-          $scope.info_changes =  $sce.trustAsHtml("Please select a version.");
-          $scope.info_changes_testingplatform = $sce.trustAsHtml("");
+          $scope.info_changes =  $sce.trustAsHtml("Please select a version to see changes.");
+          $scope.info_changes_testingplatform = $sce.trustAsHtml("Please select a version to see changes.");
       }
       
       $scope.descriptions.forEach(function(data) {
@@ -91,8 +91,8 @@ app.controller("VersionController", function($scope, $sce, $http, $window, $docu
   
   //Set default description and change box values
   $scope.info_description =  $sce.trustAsHtml("Please select a version.");
-  $scope.info_changes =  $sce.trustAsHtml("Please select a version.");
-  $scope.info_changes_testingplatform = $sce.trustAsHtml("");
+  $scope.info_changes =  $sce.trustAsHtml("Please select a version to see changes.");
+  $scope.info_changes_testingplatform = $sce.trustAsHtml("Please select a version to see changes.");
 
 });
 
