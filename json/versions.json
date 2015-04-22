@@ -1,24 +1,54 @@
 [
     {
-        "version": "1.00",
-        "date": "01-04-2015 15:00:00",
-        "description": "This is the first release of the Trock Algorithmic Trading program.",
-        "short_descr": "v1.00 [LATEST]",
-        "changes": "Initial Release",
+        "version": "1.10",
+        "date": "23-04-2015 12:00:00",
+        "description": "Desc desc.",
+        "short_descr": "v1.10 [LATEST]",
+        "changes": "Change 1 | Change 2 | Change 3",
         "links": [
             {
                 "os": "Windows",
                 "link": "builds/windows/trock.algorithmic.trading.windows.v1.00.zip",
+                "link_testingplatform" : "",
                 "SHA1checksum": "6834a46381794c6589ef18a086948e461d315d20"
             },
             {
                 "os": "Mac OS",
                 "link": "builds/mac/trock.algorithmic.trading.mac.v1.00.zip",
+                "link_testingplatform" : "",
                 "SHA1checksum": "71477098955d44d66a5370e364d81121fa5f5004"
             },
             {
                 "os": "Linux",
                 "link": "builds/linux/trock.algorithmic.trading.linux.v1.00.zip",
+                "link_testingplatform" : "",
+                "SHA1checksum": "8286bfabd98f33b80b928b0d7008f2809b0a2c05"
+            }
+        ]
+    },
+    {
+        "version": "1.00",
+        "date": "01-04-2015 15:00:00",
+        "description": "This is the first release of the Trock Algorithmic Trading program.",
+        "short_descr": "v1.00",
+        "changes": "Initial Release",
+        "links": [
+            {
+                "os": "Windows",
+                "link": "builds/windows/trock.algorithmic.trading.windows.v1.00.zip",
+                "link_testingplatform" : "",
+                "SHA1checksum": "6834a46381794c6589ef18a086948e461d315d20"
+            },
+            {
+                "os": "Mac OS",
+                "link": "builds/mac/trock.algorithmic.trading.mac.v1.00.zip",
+                "link_testingplatform" : "",
+                "SHA1checksum": "71477098955d44d66a5370e364d81121fa5f5004"
+            },
+            {
+                "os": "Linux",
+                "link": "builds/linux/trock.algorithmic.trading.linux.v1.00.zip",
+                "link_testingplatform" : "",
                 "SHA1checksum": "8286bfabd98f33b80b928b0d7008f2809b0a2c05"
             }
         ]
