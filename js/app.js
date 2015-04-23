@@ -130,6 +130,9 @@ app.controller("VersionController", function($scope, $sce, $http, $window, $docu
           $scope.info_description =  $sce.trustAsHtml("This version and operating system is not supported.");
           $scope.info_changes =  $sce.trustAsHtml("Please select a version to see changes.");
           $scope.info_changes_testingplatform = $sce.trustAsHtml("Please select a version to see changes.");
+          
+          //Also update error box
+          $scope.error_box =  $sce.trustAsHtml("This version and operating system is not supported.");
       }
         
   };
