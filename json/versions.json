@@ -8,7 +8,7 @@
         "changes_testingplatform": "Initial Release",
         "links": [
             {
-                "id": "110win32",
+                "id": "1.10win32",
                 "os": "Windows",
                 "link": "builds/trockat/windows/trock.algorithmic.trading.windows.v1.10.zip",
                 "link_testingplatform" : "builds/Testing-Platform/windows/trock.testing.platform.windows.v1.10.zip",
@@ -16,7 +16,7 @@
                 "SHA_link_testingplatform": "1df9017137981204ffc263de10132bbcad9c5392"
             },
             {
-                "id": "110mac32",
+                "id": "1.10mac32",
                 "os": "Mac OS",
                 "link": "builds/trockat/mac/trock.algorithmic.trading.mac.v1.10.zip",
                 "link_testingplatform" : "builds/Testing-Platform/mac/trock.testing.platform.mac.v1.10.zip",
@@ -24,7 +24,7 @@
                 "SHA_link_testingplatform": "d5b3b14dcf6f9f46ee00a92dcaf6b92ccf32a8ae"
             },
             {
-                "id": "110lin64",
+                "id": "1.10lin64",
                 "os": "Linux (64 bit)",
                 "link": "builds/trockat/linux/trock.algorithmic.trading.linux.v1.10.zip",
                 "link_testingplatform" : "builds/Testing-Platform/linux/trock.testing.platform.linux.x64.v1.10.zip",
@@ -32,7 +32,7 @@
                 "SHA_link_testingplatform": "f8af4eb3ddd1c57e7a10337d0e325f7e588d76fb"
             },
             {
-                "id": "110lin32",
+                "id": "1.10lin32",
                 "os": "Linux (32 bit)",
                 "link": "builds/trockat/linux/trock.algorithmic.trading.linux.v1.10.zip",
                 "link_testingplatform" : "builds/Testing-Platform/linux/trock.testing.platform.linux.x86.v1.10.zip",
