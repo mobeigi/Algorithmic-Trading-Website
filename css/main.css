@@ -108,3 +108,9 @@ p.loader img {
   margin-top: 20px;
   border: 2px #E6E6E6 solid;
 }
+
+.error-messages {
+  color: red;
+  font-weight: bold;
+  margin-top: 20px;
+}

@@ -2,7 +2,7 @@ var app = angular.module("trockWeb", []);
 
 app.controller("VersionController", function($scope, $sce, $http, $window, $document) {
 
-  //Used to store deployment info, descriptions in scope
+  //Used to store deployment info, versions, descriptions in scope
   $scope.versions = [];
   $scope.downloadTable = [];
   $scope.descriptions = [];
@@ -11,6 +11,7 @@ app.controller("VersionController", function($scope, $sce, $http, $window, $docu
   $http.get('json/versions.json').
   success(function(data, status, headers, config) {
     //Push required fields onto array
+    //We push all the info we need into arrays for later use
     data.forEach(function(item1) {
     
       $scope.versions.push({
@@ -50,19 +51,26 @@ app.controller("VersionController", function($scope, $sce, $http, $window, $docu
     if(typeof versionID === 'undefined' || versionID == ""
         || typeof operatingSystemID === 'undefined' || operatingSystemID == "" ) 
     {
-      alert("Please select a valid deployment version and operating system.");
+      $scope.error_box =  $sce.trustAsHtml("Please select a valid deployment version and operating system.");
+      return;
     }
     else {
       $scope.downloadTable.forEach(function(data) {
       if (data.id == deploymentID) {
         var downlink;
+        
+        //Set downlink based on type provided
+        // 1 = downloading core module
+        // 2 = downloading testing platform
         if (type == 1)
           downlink = data.link;
         else if (type == 2)
           downlink = data.link_testingplatform;
           
-        if (downlink == "")
-          alert("This download is not available for the selected version.");
+        if (downlink == "") {
+          $scope.error_box =  $sce.trustAsHtml("This download is not available for the selected version.");
+          return;
+        }
         else {
           deploymentFound = true;
           $window.location.href = "/".concat(downlink);
@@ -73,7 +81,7 @@ app.controller("VersionController", function($scope, $sce, $http, $window, $docu
     
     //Check if we failed to find a deployment
     if (!deploymentFound) {
-      alert("Please select a valid deployment version and operating system.");
+      $scope.error_box =  $sce.trustAsHtml("Please select a valid deployment version and operating system.");
     }
   };
   

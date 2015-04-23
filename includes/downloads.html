@@ -24,7 +24,9 @@
         <input class="orbtn" type="submit" ng-click="downloadFile(1, versionID, operatingSystemID)" value="Download TrockAT Standalone" />
         &nbsp;
         <input class="orbtn" type="submit" ng-click="downloadFile(2, versionID, operatingSystemID)" value="Download Testing Platform (GUI)" />
-    </form> 
+    </form>
+    
+    <div class="error-messages" ng-bind-html="error_box"></div>
     
     <!-- Description and change log panels describing the selected build -->
     <br /> 
