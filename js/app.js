@@ -45,7 +45,8 @@ app.controller("VersionController", function($scope, $sce, $http, $window, $docu
   //Function used to trigger file download by means of redirection (window.location)
   $scope.downloadFile = function(type, versionID, operatingSystemID) {
     var deploymentID = versionID + operatingSystemID;
-  
+    var deploymentFound = 0;
+    
     if(typeof versionID === 'undefined' || versionID == ""
         || typeof operatingSystemID === 'undefined' || operatingSystemID == "" ) 
     {
@@ -62,10 +63,17 @@ app.controller("VersionController", function($scope, $sce, $http, $window, $docu
           
         if (downlink == "")
           alert("This download is not available for the selected version.");
-        else
+        else {
+          deploymentFound = true;
           $window.location.href = "/".concat(downlink);
+        }
       }
       });
+    }
+    
+    //Check if we failed to find a deployment
+    if (!deploymentFound) {
+      alert("Please select a valid deployment version and operating system.");
     }
   };
   
