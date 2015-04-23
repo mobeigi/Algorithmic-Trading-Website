@@ -3,40 +3,43 @@
 <hr>
 
 <!-- Using Our Software instructions -->
-<h3>Using our software</h3>
+<h3>Using our trading module</h3>
 <ol>
     <li>
-        Download the program <a href="#downloads" ng-click="loadContent('downloads.html')">here</a> (or refer to the downloads tab above).
+        Download the module <a href="#downloads" ng-click="loadContent('downloads.html')">here</a> (or refer to the downloads tab above).
         Make sure you choose the link corresponding to your operating system.
     </li>
     <li>
         Unzip the downloaded file by right-clicking and selecting 'Extract here'.
     </li>
+	<li>
+		Open the 'Trock Trading Module' folder.
+	</li>
     <li>
         <p>Open the 'params file' text file and configure the following fields:</p>
         <ul>
             <li>input_csvFile</li>
-            <li>output_logFile</li>
-            <li>output_csvFile</li>
+            <li>threshold</li>
+            <li>returnsInCalculation</li>
         </ul>
         <br>
-        <p>Refer to the 'Configuring params file' section below for more details.</p>
+        <p>The above fields will have default values. Refer to the 'Configuring params file' section below for more details.</p>
     </li>
     <li>
-        <p>Open command line (or command prompt), and run our program by entering the following command:</p>
+        <p>Open command line (or command prompt), and run our module by entering the following command:</p>
             <pre><span style="margin-right:20px;">%</span><strong>./trockAT paramaters.param</strong></pre>
         </div>
     </li>
 </ol>
 
 <!-- 3rd Party Integration instructions --> 
-<h3>Integration of our software in your application</h3>
+<h3>Integration of our trading module in your application</h3>
 <ol>
     <li>
-        Make sure you have downloaded the program, and configured the 'params file' correctly (ensuring the links for the input csv file, and directories for output csv files are correct with your program).
+        Make sure you have downloaded the module, and configured the 'params file' correctly (ensuring the links for the input csv file, and directories for output csv files are correct with your program).
     </li>
     <li>
-        Make your program run our software using the command stated above through command line.
+        Make your program run our module using the command stated above through command line.
     </li>
     <li>
         Read the output files (located in the path(s) you configured for the output files) for the trading data, and let your program process the information as necessary.
@@ -55,23 +58,23 @@
       </tr>
       <tr>
         <td>input_csvFile*</td>
-        <td>Link to the input csv file. The file is respective to the directory of where the trockAT application is located</td>		
+        <td>Direct link to the input csv file. (Default value is linked to 'sample_csv_file' as the input)</td>		
       </tr>
       <tr>
         <td>output_logFile</td>
-        <td>Directory for the output log file</td>		
+        <td>Direct link for the output log file.</td>		
       </tr>
       <tr>
         <td>output_csvFile</td>
-        <td>Directory for the file containing orders</td>		
+        <td>Direct link for the file containing orders</td>		
       </tr>
       <tr>
         <td>threshold*</td>
-        <td>A higher threshold will result in the strategy to generate less buy/sell signals</td>		
+        <td>A higher threshold will result in the strategy to generate less buy/sell signals. (Default value is 0.05)</td>		
       </tr>
       <tr>
         <td>returnsInCalculation*</td>
-        <td>Number of days that a trade has occurred used to calculate the <i>last moving average</i></td>		
+        <td>Number of days that a trade has occurred used to calculate the <i>last moving average</i>. (Default value is 5)</td>		
       </tr>
       <tr>
         <td>startDate, endDate**</td>
