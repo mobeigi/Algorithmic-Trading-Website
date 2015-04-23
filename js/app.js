@@ -66,12 +66,15 @@ app.controller("VersionController", function($scope, $sce, $http, $window, $docu
   };
   
   //Function used to display build info once program version is selected
-  $scope.showBuildInfo = function(deploymentID) {
-      if(typeof deploymentID === 'undefined' || deploymentID == "") {
+  $scope.showBuildInfo = function(versionID, deploymentID) {
+      if(typeof versionID === 'undefined' || versionID == ""
+        || typeof deploymentID === 'undefined' || deploymentID == "" ) {
           $scope.info_description =  $sce.trustAsHtml("Please select a version.");
           $scope.info_changes =  $sce.trustAsHtml("Please select a version to see changes.");
           $scope.info_changes_testingplatform = $sce.trustAsHtml("Please select a version to see changes.");
       }
+      
+      var did = versionID + deploymentID;
       
       $scope.descriptions.forEach(function(data) {
          if (data.id == deploymentID) {
