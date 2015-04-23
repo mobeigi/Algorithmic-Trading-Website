@@ -81,7 +81,7 @@ app.controller("VersionController", function($scope, $sce, $http, $window, $docu
     
     //Check if we failed to find a deployment
     if (!deploymentFound) {
-      $scope.error_box =  $sce.trustAsHtml("Please select a valid deployment version and operating system.");
+      $scope.error_box =  $sce.trustAsHtml("This version and operating system is not supported for that download.");
     }
   };
   
