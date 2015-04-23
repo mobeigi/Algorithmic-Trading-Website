@@ -2,10 +2,10 @@
     {
         "version": "1.10",
         "date": "23-04-2015 12:00:00",
-        "description": "Desc desc.",
+        "description": "This version of the Trock Algorithmic Trading program features our the new Trock Testing Platform (GUI) application.",
         "short_descr": "v1.10 [LATEST]",
-        "changes": "Change 1 | Change 2 | Change 3",
-        "changes_testingplatform": "Change 1 | Change 2 | Change 3",
+        "changes": "General optimizations and bug fixes",
+        "changes_testingplatform": "Initial Release",
         "links": [
             {
                 "id": "110win",
@@ -13,7 +13,7 @@
                 "link": "builds/trockat/windows/trock.algorithmic.trading.windows.v1.10.zip",
                 "link_testingplatform" : "builds/Testing-Platform/windows/trock.testing.platform.windows.v1.10.zip",
                 "SHA_link": "5ccb653fbda0c2d98d8337ea271a940255fa8d08",
-                "SHA_link_testingplatform": "FF00000000000000000000000000000000000000"
+                "SHA_link_testingplatform": "1df9017137981204ffc263de10132bbcad9c5392"
             },
             {
                 "id": "110mac",
