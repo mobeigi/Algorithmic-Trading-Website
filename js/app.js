@@ -76,10 +76,12 @@ app.controller("VersionController", function($scope, $sce, $http, $window, $docu
       
       //Deployment ID is the combination of versionId + operatingsystemID
       var deploymentID = versionID + operatingSystem;
+      var deploymentFound = 0;
       
       $scope.descriptions.forEach(function(data) {
          if (data.id == deploymentID) {
              var osImage = "";
+             deploymentFound = true;
              
              //Determine OS Image
              if (data.os == "Windows")
@@ -97,6 +99,14 @@ app.controller("VersionController", function($scope, $sce, $http, $window, $docu
              $scope.info_changes_testingplatform =  $sce.trustAsHtml("<li>" + data.changes_testingplatform.split("|").join("</li><li>") + "</li>");
          }
       });
+      
+      //Check if we failed to find a deployment
+      if (!deploymentFound) {
+          $scope.info_description =  $sce.trustAsHtml("This version and operating system is not supported.");
+          $scope.info_changes =  $sce.trustAsHtml("Please select a version to see changes.");
+          $scope.info_changes_testingplatform = $sce.trustAsHtml("Please select a version to see changes.");
+      }
+        
   };
   
   //Set default description and change box values
