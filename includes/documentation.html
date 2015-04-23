@@ -6,31 +6,32 @@
 <h3>Using our trading module</h3>
 <ol>
     <li>
-        Download the module <a href="#downloads" ng-click="loadContent('downloads.html')">here</a> (or refer to the downloads tab above).
+        Download the standalone module <a href="#downloads" ng-click="loadContent('downloads.html')">here</a> (or refer to the downloads tab above).
         Make sure you choose the link corresponding to your operating system.
     </li>
     <li>
         Unzip the downloaded file by right-clicking and selecting 'Extract here'.
     </li>
-	<li>
-		Open the 'Trock Trading Module' folder.
-	</li>
     <li>
         <p>Open the 'params file' text file and configure the following fields:</p>
         <ul>
             <li>input_csvFile</li>
             <li>threshold</li>
             <li>returnsInCalculation</li>
+			<li>startDate</li>
+			<li>endDate</li>
         </ul>
         <br>
-        <p>The above fields will have default values. Refer to the 'Configuring params file' section below for more details.</p>
+        <p>Refer to the 'Configuring params file' section below for more details.</p>
     </li>
     <li>
         <p>Open command line (or command prompt), and run our module by entering the following command:</p>
-            <pre><span style="margin-right:20px;">%</span><strong>./trockAT paramaters.param</strong></pre>
-        </div>
+            <pre><span style="margin-right:20px;">%</span><strong>trockAT paramaters.param</strong></pre>
+		<p>For users running the Linux version, the command will be:</p>
+		<pre><span style="margin-right:20px;">%</span><strong>./trockAT paramaters.param</strong></pre>
     </li>
 </ol>
+<br>
 
 <!-- 3rd Party Integration instructions --> 
 <h3>Integration of our trading module in your application</h3>
@@ -45,6 +46,32 @@
         Read the output files (located in the path(s) you configured for the output files) for the trading data, and let your program process the information as necessary.
     </li>
 </ol>
+<br>
+
+<!-- Using our Trading Platform -->
+<h3>Using our Trading Platform</h3>
+<ol>
+	<li>
+		Download the Testing Platform from the downloads tab.
+	</li>
+    <li>
+        Unzip the downloaded file by right-clicking and selecting 'Extract here'.
+    </li>
+	<li>
+		<p>Double click the executable file.</p>
+		<p>For Linux users, there are two commands you can use to run the platform. Either:</p>
+		<pre><span style="margin-right:20px;">%</span><strong>./trockTestingPlatform</strong></pre>
+		<p>or</p>
+		<pre><span style="margin-right:20px;">%</span><strong>sh trockTestingPlatform.sh</strong></pre>
+	</li>
+	<p>Once the trading platform is running: </p>
+	<li>
+		<p><strong>When trying to analyse a module:</strong></p>
+		<p>Before the 'Execute' button is clicked, make sure to fill in the parameters. Start and end date must NOT be equal.</p>
+
+	</li>
+</ol>
+<br>
 
 <!-- Configuring the 'params file' instructions -->
 <h3>Configuring the 'Params file'</h3>
@@ -77,11 +104,21 @@
         <td>Number of days that a trade has occurred used to calculate the <i>last moving average</i>. (Default value is 5)</td>		
       </tr>
       <tr>
-        <td>startDate, endDate**</td>
+        <td>startDate, endDate*</td>
         <td>The period when trading can occur. Each date must be expressed in the format 'DD-MMM-YYYY'.</td>
       </tr>
     </table>
 	<p><i>* this field cannot be empty<i></p>
-	<p><i>** if a starting date is provided, there must also be an end date provided
-    
+	
 </div>
+
+<!--Common issues --> 
+<h3>Common Issues</h3>
+
+	<p><strong>Q: I'm getting a "bash: ./[executable name]: Permission denied" error message on Linux.</strong></p>
+	<p>A: There is some permission issues with the executable. To fix this, simply run the following command:</p>
+	<pre><span style="margin-right:20px;">%</span><strong>chmod 755 [executable name]</strong></pre>
+	<br>
+
+ 
+
