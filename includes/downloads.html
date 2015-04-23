@@ -13,7 +13,10 @@
         <!-- Drop Down Menu for OS -->
         <select ng-change="showBuildInfo(versionID, deploymentID)" ng-model="deploymentID" id="download-dropdown">
         <option selected="selected" value="">--- Please Select an OS ---</option>
-        <option selected="selected" value="win32">Windows (32 bit)</option>
+        <option selected="selected" value="win32">Windows (32/64 bit)</option>
+        <option selected="selected" value="win32">Mac OS (32/64 bit)</option>
+        <option selected="selected" value="lin32">Linux (32 bit)</option>
+        <option selected="selected" value="lin64">Linux (64 bit)</option>
         </select>
         
         <input class="orbtn" type="submit" ng-click="downloadFile(1, deploymentID)" value="Download TrockAT Standalone" />

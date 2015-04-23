@@ -50,7 +50,7 @@
         "changes_testingplatform": "N/A",
         "links": [
             {
-                "id": "100win",
+                "id": "1.00win32",
                 "os": "Windows",
                 "link": "builds/trockat/windows/trock.algorithmic.trading.windows.v1.00.zip",
                 "link_testingplatform" : "",
@@ -58,7 +58,7 @@
                 "SHA_link_testingplatform": "N/A"
             },
             {
-                "id": "100mac",
+                "id": "1.00mac32",
                 "os": "Mac OS",
                 "link": "builds/trockat/mac/trock.algorithmic.trading.mac.v1.00.zip",
                 "link_testingplatform" : "",
@@ -66,7 +66,7 @@
                 "SHA_link_testingplatform": "N/A"
             },
             {
-                "id": "100lin",
+                "id": "1.00lin32",
                 "os": "Linux",
                 "link": "builds/trockat/linux/trock.algorithmic.trading.linux.v1.00.zip",
                 "link_testingplatform" : "",
