@@ -4,15 +4,22 @@
 <p>This software is released under the GNU General Public License. A copy of the licence can be found <a href="http://www.gnu.org/licenses/gpl.html">here</a>.</p>
 <div ng-controller="VersionController">
     <form>
-        <!-- Drop Down Menu -->
-        <select ng-change="showBuildInfo(deploymentID)" ng-model="deploymentID" id="download-dropdown">
+        <!-- Drop Down Menu for Version-->
+        <select ng-change="showBuildInfo(versionID, deploymentID)" ng-model="versionID" id="download-dropdown">
         <option selected="selected" value="">--- Please Select a Version ---</option>
-        <option ng-repeat="deployment in deployments" value="{{deployment.id}}">{{deployment.short_descr}} ({{deployment.os}})</option>
+        <option ng-repeat="version in versions" value="{{version.versionNum}}">{{version.short_descr}}</option>
         </select>
+        
+        <!-- Drop Down Menu for OS -->
+        <select ng-change="showBuildInfo(versionID, deploymentID)" ng-model="deploymentID" id="download-dropdown">
+        <option selected="selected" value="">--- Please Select an OS ---</option>
+        <option ng-repeat="deployment in deployments" value="{{deployment.id}}">{{deployment.os}}</option>
+        </select>
+        
         <input class="orbtn" type="submit" ng-click="downloadFile(1, deploymentID)" value="Download TrockAT Standalone" />
         &nbsp;
         <input class="orbtn" type="submit" ng-click="downloadFile(2, deploymentID)" value="Download Testing Platform (GUI)" />
-    </form>  
+    </form> 
     
     <!-- Description and change log panels describing the selected build -->
     <br /> 

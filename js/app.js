@@ -3,6 +3,7 @@ var app = angular.module("trockWeb", []);
 app.controller("VersionController", function($scope, $sce, $http, $window, $document) {
 
   //Used to store deployment info, descriptions in scope
+  $scope.versions = [];
   $scope.deployments = [];
   $scope.descriptions = [];
   
@@ -11,26 +12,31 @@ app.controller("VersionController", function($scope, $sce, $http, $window, $docu
   success(function(data, status, headers, config) {
     //Push required fields onto array
     data.forEach(function(item1) {
+    
+      $scope.versions.push({
+        versionNum: item1.version,
+        short_descr: item1.short_descr
+      });
+    
       item1.links.forEach(function(item2) {
         $scope.deployments.push({
-          short_descr: item1.short_descr,
           id: item2.id,
           link: item2.link,
           link_testingplatform: item2.link_testingplatform,
           os: item2.os
         });
           
-          $scope.descriptions.push({
-          version: item1.version,
-          id: item2.id,
-          link: item2.link,
-          changes: item1.changes,
-          changes_testingplatform: item1.changes_testingplatform,
-          description: item1.description,
-          date: item1.date,
-          os: item2.os,
-          checksum: item2.SHA_link,
-          checksum_testingplatform: item2.SHA_link_testingplatform
+        $scope.descriptions.push({
+        version: item1.version,
+        id: item2.id,
+        link: item2.link,
+        changes: item1.changes,
+        changes_testingplatform: item1.changes_testingplatform,
+        description: item1.description,
+        date: item1.date,
+        os: item2.os,
+        checksum: item2.SHA_link,
+        checksum_testingplatform: item2.SHA_link_testingplatform
         });
       });
     });
