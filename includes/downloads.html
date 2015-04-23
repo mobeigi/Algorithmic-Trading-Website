@@ -5,12 +5,14 @@
 <div ng-controller="VersionController">
     <form>
         <!-- Drop Down Menu for Version-->
+        <strong>Select Release Version</strong>
         <select ng-change="showBuildInfo(versionID, deploymentID)" ng-model="versionID" id="download-dropdown">
         <option selected="selected" value="">--- Please Select a Version ---</option>
         <option ng-repeat="version in versions" value="{{version.versionNum}}">{{version.short_descr}}</option>
         </select>
         
         <!-- Drop Down Menu for OS -->
+        <strong>Select Operating System</strong>
         <select ng-change="showBuildInfo(versionID, deploymentID)" ng-model="deploymentID" id="download-dropdown">
         <option selected="selected" value="">--- Please Select an OS ---</option>
         <option selected="selected" value="win32">Windows (32/64 bit)</option>
