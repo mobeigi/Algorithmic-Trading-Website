@@ -10,25 +10,25 @@
             {
                 "id": "110win",
                 "os": "Windows",
-                "link": "builds/windows/trock.algorithmic.trading.windows.v1.00.zip",
+                "link": "builds/trockat/windows/trock.algorithmic.trading.windows.v1.10.zip",
                 "link_testingplatform" : "builds/windows/trock.algorithmic.trading.windows.v1.00.zip",
-                "SHA_link": "6834a46381794c6589ef18a086948e461d315d20",
+                "SHA_link": "5ccb653fbda0c2d98d8337ea271a940255fa8d08",
                 "SHA_link_testingplatform": "FF00000000000000000000000000000000000000"
             },
             {
                 "id": "110mac",
                 "os": "Mac OS",
-                "link": "builds/mac/trock.algorithmic.trading.mac.v1.00.zip",
+                "link": "builds/trockat/mac/trock.algorithmic.trading.mac.v1.10.zip",
                 "link_testingplatform" : "",
-                "SHA_link": "71477098955d44d66a5370e364d81121fa5f5004",
+                "SHA_link": "f621e880a11249e8ea9c7b04587158b2b6d7a2df",
                 "SHA_link_testingplatform": "FF00000000000000000000000000000000000000"
             },
             {
                 "id": "110lin",
                 "os": "Linux",
-                "link": "builds/linux/trock.algorithmic.trading.linux.v1.00.zip",
+                "link": "builds/trockat/linux/trock.algorithmic.trading.linux.v1.10.zip",
                 "link_testingplatform" : "",
-                "SHA_link": "8286bfabd98f33b80b928b0d7008f2809b0a2c05",
+                "SHA_link": "2248907594de230c91d18cb27611bd0d072b6898",
                 "SHA_link_testingplatform": "FF00000000000000000000000000000000000000"
             }
         ]
@@ -44,7 +44,7 @@
             {
                 "id": "100win",
                 "os": "Windows",
-                "link": "builds/windows/trock.algorithmic.trading.windows.v1.00.zip",
+                "link": "builds/trockat/windows/trock.algorithmic.trading.windows.v1.00.zip",
                 "link_testingplatform" : "",
                 "SHA_link": "6834a46381794c6589ef18a086948e461d315d20",
                 "SHA_link_testingplatform": "N/A"
@@ -52,7 +52,7 @@
             {
                 "id": "100mac",
                 "os": "Mac OS",
-                "link": "builds/mac/trock.algorithmic.trading.mac.v1.00.zip",
+                "link": "builds/trockat/mac/trock.algorithmic.trading.mac.v1.00.zip",
                 "link_testingplatform" : "",
                 "SHA_link": "71477098955d44d66a5370e364d81121fa5f5004",
                 "SHA_link_testingplatform": "N/A"
@@ -60,7 +60,7 @@
             {
                 "id": "100lin",
                 "os": "Linux",
-                "link": "builds/linux/trock.algorithmic.trading.linux.v1.00.zip",
+                "link": "builds/trockat/linux/trock.algorithmic.trading.linux.v1.00.zip",
                 "link_testingplatform" : "",
                 "SHA_link": "8286bfabd98f33b80b928b0d7008f2809b0a2c05",
                 "SHA_link_testingplatform": "N/A"
