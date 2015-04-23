@@ -2,7 +2,7 @@
     {
         "version": "1.10",
         "date": "23-04-2015 12:00:00",
-        "description": "This version of the Trock Algorithmic Trading program features our the new Trock Testing Platform (GUI) application.",
+        "description": "This version of the Trock Algorithmic Trading program features the new Trock Testing Platform (GUI) application as well as customisations to allow easier integration with third party software.",
         "short_descr": "v1.10 [LATEST]",
         "changes": "General optimizations and bug fixes",
         "changes_testingplatform": "Initial Release",
