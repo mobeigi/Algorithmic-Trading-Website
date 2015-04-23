@@ -4,7 +4,7 @@
         "date": "23-04-2015 12:00:00",
         "description": "This version of the Trock Algorithmic Trading program features the new Trock Testing Platform (GUI) application as well as customisations to allow easier integration with third party software.",
         "short_descr": "v1.10 [LATEST]",
-        "changes": "General optimizations and bug fixes",
+        "changes": "General optimizations and bug fixes|Users can now select a specific period of time for when trades occur|(Bug fix) Returns calculation no longer considers first trade day as trade|(Bug fix) Trade days listed as 'no trades' no longer result in a trade",
         "changes_testingplatform": "Initial Release",
         "links": [
             {
