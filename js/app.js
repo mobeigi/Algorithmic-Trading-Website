@@ -73,6 +73,8 @@ app.controller("VersionController", function($scope, $sce, $http, $window, $docu
         }
         else {
           deploymentFound = true;
+          //Clear error box
+          $scope.error_box =  $sce.trustAsHtml("");
           $window.location.href = "/".concat(downlink);
         }
       }
@@ -103,6 +105,8 @@ app.controller("VersionController", function($scope, $sce, $http, $window, $docu
          if (data.id == deploymentID) {
              var osImage = "";
              deploymentFound = true;
+              //Clear error box
+              $scope.error_box =  $sce.trustAsHtml("");
              
              //Determine OS Image
              if (data.os == "Windows")
