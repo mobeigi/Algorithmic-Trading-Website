@@ -43,13 +43,17 @@ app.controller("VersionController", function($scope, $sce, $http, $window, $docu
   });
   
   //Function used to trigger file download by means of redirection (window.location)
-  $scope.downloadFile = function(type, operatingSystem) {
-    if(typeof operatingSystem === 'undefined' || operatingSystem == "") {
-      alert("Please select a deployment version and operating system.");
+  $scope.downloadFile = function(type, versionID, operatingSystem) {
+    var deploymentID = versionID + operatingSystem;
+  
+    if(typeof versionID === 'undefined' || versionID == ""
+        || typeof operatingSystem === 'undefined' || operatingSystem == "" ) 
+    {
+      alert("Please select a valid deployment version and operating system.");
     }
     else {
       $scope.deployments.forEach(function(data) {
-      if (data.id == operatingSystem) {
+      if (data.id == deploymentID) {
         var downlink;
         if (type == 1)
           downlink = data.link;
