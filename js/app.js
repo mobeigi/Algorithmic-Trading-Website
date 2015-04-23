@@ -4,7 +4,7 @@ app.controller("VersionController", function($scope, $sce, $http, $window, $docu
 
   //Used to store deployment info, descriptions in scope
   $scope.versions = [];
-  $scope.operatingSystem = [];
+  $scope.downloadTable = [];
   $scope.descriptions = [];
   
   //Retrieve all build versions
@@ -19,7 +19,7 @@ app.controller("VersionController", function($scope, $sce, $http, $window, $docu
       });
     
       item1.links.forEach(function(item2) {
-        $scope.operatingSystem.push({
+        $scope.downloadTable.push({
           id: item2.id,
           link: item2.link,
           link_testingplatform: item2.link_testingplatform,
@@ -43,16 +43,16 @@ app.controller("VersionController", function($scope, $sce, $http, $window, $docu
   });
   
   //Function used to trigger file download by means of redirection (window.location)
-  $scope.downloadFile = function(type, versionID, operatingSystem) {
-    var deploymentID = versionID + operatingSystem;
+  $scope.downloadFile = function(type, versionID, operatingSystemID) {
+    var deploymentID = versionID + operatingSystemID;
   
     if(typeof versionID === 'undefined' || versionID == ""
-        || typeof operatingSystem === 'undefined' || operatingSystem == "" ) 
+        || typeof operatingSystemID === 'undefined' || operatingSystemID == "" ) 
     {
       alert("Please select a valid deployment version and operating system.");
     }
     else {
-      $scope.deployments.forEach(function(data) {
+      $scope.downloadTable.forEach(function(data) {
       if (data.id == deploymentID) {
         var downlink;
         if (type == 1)
@@ -70,9 +70,9 @@ app.controller("VersionController", function($scope, $sce, $http, $window, $docu
   };
   
   //Function used to display build info once program version is selected
-  $scope.showBuildInfo = function(versionID, operatingSystem) {
+  $scope.showBuildInfo = function(versionID, operatingSystemID) {
       if(typeof versionID === 'undefined' || versionID == ""
-        || typeof operatingSystem === 'undefined' || operatingSystem == "" ) {
+        || typeof operatingSystemID === 'undefined' || operatingSystemID == "" ) {
           $scope.info_description =  $sce.trustAsHtml("Please select a version.");
           $scope.info_changes =  $sce.trustAsHtml("Please select a version to see changes.");
           $scope.info_changes_testingplatform = $sce.trustAsHtml("Please select a version to see changes.");
@@ -80,7 +80,7 @@ app.controller("VersionController", function($scope, $sce, $http, $window, $docu
       }
       
       //Deployment ID is the combination of versionId + operatingsystemID
-      var deploymentID = versionID + operatingSystem;
+      var deploymentID = versionID + operatingSystemID;
       var deploymentFound = 0;
       
       $scope.descriptions.forEach(function(data) {
