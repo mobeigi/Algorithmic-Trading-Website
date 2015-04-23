@@ -72,6 +72,7 @@ app.controller("VersionController", function($scope, $sce, $http, $window, $docu
           $scope.info_description =  $sce.trustAsHtml("Please select a version.");
           $scope.info_changes =  $sce.trustAsHtml("Please select a version to see changes.");
           $scope.info_changes_testingplatform = $sce.trustAsHtml("Please select a version to see changes.");
+          return;
       }
       
       //Deployment ID is the combination of versionId + operatingsystemID
