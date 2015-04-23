@@ -12,7 +12,7 @@
                 "os": "Windows",
                 "link": "builds/trockat/windows/trock.algorithmic.trading.windows.v1.10.zip",
                 "link_testingplatform" : "builds/Testing-Platform/windows/trock.testing.platform.windows.v1.10.zip",
-                "SHA_link": "5ccb653fbda0c2d98d8337ea271a940255fa8d08",
+                "SHA_link": "a1aba8899c365153ba07f3e3445dd87e107d71c3",
                 "SHA_link_testingplatform": "1df9017137981204ffc263de10132bbcad9c5392"
             },
             {
