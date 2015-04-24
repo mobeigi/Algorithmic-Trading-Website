@@ -44,7 +44,7 @@ app.controller("VersionController", function($scope, $sce, $http, $window, $docu
   });
   
   //Auto select Operating System based on detection
-  $scope.detectOS = function() {
+  var detectOS = function() {
     var processorArchitecture = "";
     var userOS = "";
 
@@ -82,6 +82,8 @@ app.controller("VersionController", function($scope, $sce, $http, $window, $docu
       angular.element( document.querySelector( "#win32") )[0].selected = true;
     }
   };
+  
+  detectOS();
   
   //Function used to trigger file download by means of redirection (window.location)
   $scope.downloadFile = function(type, versionID, operatingSystemID) {
