@@ -161,6 +161,9 @@ app.controller("VersionController", function($scope, $sce, $http, $window, $docu
   
   //Function used to display build info once program version is selected
   $scope.showBuildInfo = function(versionID, operatingSystemID) {
+  console.log(versionID);
+  console.log(operatingSystemID);
+  
       if(typeof versionID === 'undefined' || versionID == ""
         || typeof operatingSystemID === 'undefined' || operatingSystemID == "" ) {
           $scope.info_description =  $sce.trustAsHtml("Please select a version.");
