@@ -121,3 +121,7 @@ p.loader img {
   color: #5286FF;
   font-weight: bold;
 }
+
+.tabSelector {
+  cursor: pointer;
+}
