@@ -7,6 +7,8 @@ app.controller("VersionController", function($scope, $sce, $http, $window, $docu
   $scope.downloadTable = [];
   $scope.descriptions = [];
   
+  $scope.osDetectionFirst = true;
+  
   //Retrieve all build versions
   $http.get('json/versions.json').
   success(function(data, status, headers, config) {
@@ -113,7 +115,7 @@ app.controller("VersionController", function($scope, $sce, $http, $window, $docu
       processorArchitectureCompat = "32";
     } 
     else if (navigator.platform.indexOf("Lin") != -1){
-      userOS = "lin";
+      userOS = "cat";
       userOSNicename = "Linux";
     }
 
@@ -127,6 +129,14 @@ app.controller("VersionController", function($scope, $sce, $http, $window, $docu
       
       //Auto select the detected option
       $scope.operatingSystemID = {id: optionSelectionID};
+    }
+    else {
+      //Failed to auto detect OS
+      //If this isn't initial detection, show error message
+      if (!$scope.osDetectionFirst)
+        $scope.os_detection_box =  $sce.trustAsHtml("(OS detection failed, please manually select desired OS.)");
+      
+      $scope.osDetectionFirst = true;
     }
   };
   
