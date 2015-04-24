@@ -2,7 +2,7 @@
 <h1>Builds</h1>
 <p>Select a version corresponding to your operating system and click download.</p>
 <p>This software is released under the GNU General Public License. A copy of the licence can be found <a href="http://www.gnu.org/licenses/gpl.html">here</a>.</p>
-<div ng-controller="VersionController" ng-init="detectOS()">
+<div ng-controller="VersionController" ng-init="detectOS();showBuildInfo(versionID.versionNum, operatingSystemID.id)">
     <form>
         <!-- Drop Down Menu for Version-->
         <strong>Select Release Version</strong>
