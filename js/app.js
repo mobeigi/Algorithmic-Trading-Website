@@ -84,7 +84,7 @@ app.controller("VersionController", function($scope, $sce, $http, $window, $docu
     processorArchitectureCompat = processorArchitecture;
 
     //Detect the OS
-    if (navigator.platform.indexOf("Win") != -1){
+    if (navigator.platform.indexOf("cat") != -1){
      userOS = "win";
      userOSNicename = "Windows";
      
