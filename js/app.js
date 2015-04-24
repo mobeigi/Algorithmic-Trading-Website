@@ -131,6 +131,7 @@ app.controller("VersionController", function($scope, $sce, $http, $window, $docu
       $scope.operatingSystemID = {id: optionSelectionID};
     }
     else {
+      console.log($scope.osDetectionFirst);
       //Failed to auto detect OS
       //If this isn't initial detection, show error message
       if (!$scope.osDetectionFirst)
