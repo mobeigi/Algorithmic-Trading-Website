@@ -252,7 +252,7 @@ app.controller("VersionController", function($scope, $sce, $http, $window, $docu
 });
 
 //Viewer controller is used to dynamically load each page
-app.controller("ViewerController", function ViewerController($scope, $sce, $location, $timeout, $http, $compile)) {
+app.controller("ViewerController", function ViewerController($scope, $sce, $location, $timeout, $http, $compile) {
   
   //Load a website into the content div
   $scope.loadContent = function(webpageName) {
@@ -281,7 +281,7 @@ app.controller("ViewerController", function ViewerController($scope, $sce, $loca
       $timeout(function() { $scope.loadContent("404.html");}, 200);
   }
   
-}]).directive('compile', function($compile, $parse) {
+}).directive('compile', function($compile, $parse) {
   return {
     link: function(scope, element, attr) {
       var parsed = $parse(attr.ngBindHtml);
