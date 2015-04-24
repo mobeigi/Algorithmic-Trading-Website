@@ -63,6 +63,8 @@ app.controller("VersionController", function($scope, $sce, $http, $window, $docu
     }
   ];
 
+  $scope.versionID = $scope.versions[0];
+  
   //Auto select Operating System based on detection
   $scope.detectOS = function() {
     var processorArchitecture = "";
