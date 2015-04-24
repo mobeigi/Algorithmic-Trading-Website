@@ -44,7 +44,7 @@ app.controller("VersionController", function($scope, $sce, $http, $window, $docu
   });
   
   //Auto select Operating System based on detection
-  var detectOS = function() {
+  $scope.detectOS = function() {
     var processorArchitecture = "";
     var userOS = "";
 
