@@ -78,7 +78,7 @@ app.controller("VersionController", function($scope, $sce, $http, $window, $docu
       var optionSelectionID = userOS + processorArchitecture;
       
       console.log(optionSelectionID);
-      
+      console.log(angular.element( document.querySelector( "#" +  optionSelectionID) )[0]);
       //Auto detect OS
       //We will find only 1 instance of said query
       angular.element( document.querySelector( "#" +  optionSelectionID) )[0].selected = true;
