@@ -79,8 +79,7 @@ app.controller("VersionController", function($scope, $sce, $http, $window, $docu
       
       //Auto detect OS
       //We will find only 1 instance of said query
-      //angular.element( document.querySelector( "#win32") )[0].selected = true;
-      $scope.win32.selected = true;
+      angular.element( document.querySelector( "#win32") )[0].selected = true;
     }
   };
   
