@@ -68,7 +68,7 @@ app.controller("VersionController", function($scope, $sce, $http, $window, $docu
   ];
   
   //Select default first option
-  $scope.operatingSystemID = $scope.osList[0];
+  $scope.operatingSystemID = {id: "default"};
   
   
   //Auto select Operating System based on detection
