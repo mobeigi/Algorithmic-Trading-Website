@@ -46,28 +46,23 @@ app.controller("VersionController", function($scope, $sce, $http, $window, $docu
   //Create supported operating systems list
   $scope.osList = [
     {
-      id: 0,
-      osid: "", //default selection box
+      id: "", //default selection box
       label: "--- Please Select an OS ---"
     },
     {
-      id: 1,
-      osid: "win32",
+      id: "win32",
       label: "Windows (32/64 bit)"
     },
     {
-      id: 2,
-      osid: "mac32",
+      id: "mac32",
       label: "Mac OS (32/64 bit)"
     },
     {
-      id: 3,
-      osid: "lin32",
+      id: "lin32",
       label: "Linux (32 bit)"
     },
     {
-      id: 4,
-      osid: "lin64",
+      id: "lin64",
       label: "Linux (64 bit)"
     }
   ];
@@ -83,11 +78,11 @@ app.controller("VersionController", function($scope, $sce, $http, $window, $docu
     if (navigator.userAgent.indexOf("WOW64") != -1 || 
       navigator.userAgent.indexOf("Win64") != -1 ){
      processorArchitecture = "64";
-     processorArchitectureCompat = processorArchitecture;
     } else { //Assume 32 bit
      processorArchitecture = "32";
-     processorArchitectureCompat = processorArchitecture;
     }
+    
+    processorArchitectureCompat = processorArchitecture;
 
     //Detect the OS
     if (navigator.platform.indexOf("Win") != -1){
@@ -105,8 +100,8 @@ app.controller("VersionController", function($scope, $sce, $http, $window, $docu
       processorArchitectureCompat = "32";
     } 
     else if (navigator.platform.indexOf("Lin") != -1){
-      userOSNicename = "Linux";
       userOS = "lin";
+      userOSNicename = "Linux";
     }
 
     //Check for valid detection
@@ -114,11 +109,13 @@ app.controller("VersionController", function($scope, $sce, $http, $window, $docu
       //Valid match found
       var optionSelectionID = userOS + processorArchitectureCompat;
       
+      console.log(optionSelectionID);
+      
       //Output detected option to os message section
       $scope.os_detection_box =  $sce.trustAsHtml("(We have detected your OS as " + userOSNicename + " " +processorArchitecture + " bits)");
       
       //Auto select the detected option
-      $scope.operatingSystemID = {osid: optionSelectionID};
+      $scope.operatingSystemID = {id: optionSelectionID};
     }
   };
   
