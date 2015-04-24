@@ -63,8 +63,7 @@ app.controller("VersionController", function($scope, $sce, $http, $window, $docu
     }
   ];
 
-  
-  //$scope.versionID = $scope.versions[0].versionNum;
+  $scope.versionID = $scope.versions[0];
   
   //Auto select Operating System based on detection
   $scope.detectOS = function() {
@@ -161,6 +160,7 @@ app.controller("VersionController", function($scope, $sce, $http, $window, $docu
   
   //Function used to display build info once program version is selected
   $scope.showBuildInfo = function(versionID, operatingSystemID) {
+    console.log(versionID);
       if(typeof versionID === 'undefined' || versionID == ""
         || typeof operatingSystemID === 'undefined' || operatingSystemID == "" ) {
           $scope.info_description =  $sce.trustAsHtml("Please select a version.");
