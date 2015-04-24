@@ -42,6 +42,8 @@ app.controller("VersionController", function($scope, $sce, $http, $window, $docu
       });
     });
     
+    //Set version to latest by default
+    //We do this here as it is at this stage that we have parsed our JSON file and populated our select
     $scope.versionID = $scope.versions[0];
   });
   
@@ -64,13 +66,6 @@ app.controller("VersionController", function($scope, $sce, $http, $window, $docu
       label: "Linux (64 bit)"
     }
   ];
-  
-  $scope.test = function() {
-    console.log ($scope.versionID);
-    console.log($scope.versions[0]);
-    $scope.versionID = $scope.versions[0];
-    console.log ($scope.versionID);
-  };
   
   //Auto select Operating System based on detection
   $scope.detectOS = function() {
