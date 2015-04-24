@@ -2,7 +2,7 @@
 <h1>Builds</h1>
 <p>Select a version corresponding to your operating system and click download.</p>
 <p>This software is released under the GNU General Public License. A copy of the licence can be found <a href="http://www.gnu.org/licenses/gpl.html">here</a>.</p>
-<div ng-controller="VersionController" ng-init="detectOS()">
+<div ng-controller="VersionController" ng-init="detectOS(); tab=1">
     <form>
         <!-- Drop Down Menu for Version-->
         <strong>Select Release Version</strong>
@@ -31,21 +31,21 @@
         <!-- Tabs -->
         <ul id="buildPanelTabs" class="nav nav-tabs">
            <li class="active">
-              <a href="#buildDescription" data-toggle="tab">Description</a>
+              <a ng-click="tab = 1" data-toggle="tab">Description</a>
            </li>
            <li>
-               <a href="#buildChangeLog" data-toggle="tab">Change Log</a>
+               <a ng-click="tab = 2" data-toggle="tab">Change Log</a>
            </li>
         </ul>  
 
         <!-- Panel content -->
         <div id="buildPanelContent" class="tab-content" >
-            <div class="tab-pane in active" id="buildDescription">
+            <div class="tab-pane in active" ng-show="tab == 1" id="buildDescription">
                     <br>        
                     <div ng-bind-html="info_description"></div>
                     <br>
             </div>
-            <div class="tab-pane" id="buildChangeLog">  
+            <div class="tab-pane" ng-show="tab == 2" id="buildChangeLog">  
                     <br>
                     <strong>TrockAT Standalone</strong>
                     <ul><div ng-bind-html="info_changes"></div></ul>
