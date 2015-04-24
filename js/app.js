@@ -100,8 +100,7 @@ app.controller("VersionController", function($scope, $sce, $http, $window, $docu
       
       //Auto detect OS
       //We will find only 1 instance of said query
-      $scope.operatingSystemID = {id: "win32"};
-      //angular.element( document.querySelector( "#win32") )[0].selected = true;
+      $scope.operatingSystemID = {id: optionSelectionID};
     }
   };
   
