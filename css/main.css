@@ -125,3 +125,7 @@ p.loader img {
 .tabSelector {
   cursor: pointer;
 }
+
+.anchorLink {
+  cursor: pointer;
+}
