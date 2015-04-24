@@ -1,6 +1,6 @@
 var app = angular.module("trockWeb", []);
 
-app.controller("VersionController", function($scope, $sce, $http, $window, $document, $timeout) {
+app.controller("VersionController", function($scope, $sce, $http, $window, $document) {
 
   //Used to store deployment info, versions, descriptions in scope
   $scope.versions = [];
@@ -134,11 +134,6 @@ app.controller("VersionController", function($scope, $sce, $http, $window, $docu
   $scope.clearOS = function () {
     $scope.os_detection_box =  $sce.trustAsHtml("");
   };
-  
-  //Used to load build info after short delay
-  $scope.initBuildInfo = function() {
-   $timeout(function() { $scope.showBuildInfo($scope.versionID.versionNum, $scope.operatingSystemID.id);}, 250);
-  }
   
   //Function used to trigger file download by means of redirection (window.location)
   $scope.downloadFile = function(type, versionID, operatingSystemID) {
