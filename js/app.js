@@ -46,23 +46,28 @@ app.controller("VersionController", function($scope, $sce, $http, $window, $docu
   //Create supported operating systems list
   $scope.osList = [
     {
-      id: "", //default selection box
+      id: 0,
+      osid: "", //default selection box
       label: "--- Please Select an OS ---"
     },
     {
-      id: "win32",
+      id: 1,
+      osid: "win32",
       label: "Windows (32/64 bit)"
     },
     {
-      id: "mac32",
+      id: 2,
+      osid: "mac32",
       label: "Mac OS (32/64 bit)"
     },
     {
-      id: "lin32",
+      id: 3,
+      osid: "lin32",
       label: "Linux (32 bit)"
     },
     {
-      id: "lin64",
+      id: 4,
+      osid: "lin64",
       label: "Linux (64 bit)"
     }
   ];
@@ -111,7 +116,7 @@ app.controller("VersionController", function($scope, $sce, $http, $window, $docu
       $scope.os_detection_box =  $sce.trustAsHtml("(We have detected your OS as " + userOSNicename + " " +processorArchitecture + " bits)");
       
       //Auto select the detected option
-      $scope.operatingSystemID = {id: optionSelectionID};
+      $scope.operatingSystemID = {osid: optionSelectionID};
     }
   };
   
