@@ -62,7 +62,8 @@ app.controller("VersionController", function($scope, $sce, $http, $window, $docu
       label: "Linux (64 bit)"
     }
   ];
-  
+  console.log ($scope.versionID);
+  console.log($scope.versions[0]);
   $scope.versionID = $scope.versions[0];
   
   //Auto select Operating System based on detection
