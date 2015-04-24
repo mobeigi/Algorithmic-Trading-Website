@@ -44,43 +44,45 @@ app.controller("VersionController", function($scope, $sce, $http, $window, $docu
   });
   
   //Auto select Operating System based on detection
-  var processorArchitecture = "";
-  var userOS = "";
-  
-  if (navigator.userAgent.indexOf("WOW64") != -1 || 
-    navigator.userAgent.indexOf("Win64") != -1 ){
-   processorArchitecture = "64";
-  } else { //Assume 32 bit
-   processorArchitecture = "32";
-  }
-  
-  //Detect the OS
-  if (navigator.platform.indexOf("Win") != -1){
-   userOS = "win";
-   
-   if (processorArchitecture == "64")
-    processorArchitecture = "32";
-  } 
-  else if (navigator.platform.indexOf("Mac") != -1){
-   userOS = "mac";
-   
-   if (processorArchitecture == "64")
-    processorArchitecture = "32";
-  } 
-  else if (navigator.platform.indexOf("Lin") != -1){
-   userOS = "lin";
-  }
-  
-  //Check for valid detection
-  if (userOS != "" && processorArchitecture != "") {
-    //Valid match found
-    var optionSelectionID = userOS + processorArchitecture;
-    
-    console.log(optionSelectionID);
-    
-    //Auto detect OS
-    angular.element( document.querySelector( "#" +  optionSelectionID) ).selected = true;
-  }
+  $scope.detectOS = function() {
+    var processorArchitecture = "";
+    var userOS = "";
+
+    if (navigator.userAgent.indexOf("WOW64") != -1 || 
+      navigator.userAgent.indexOf("Win64") != -1 ){
+     processorArchitecture = "64";
+    } else { //Assume 32 bit
+     processorArchitecture = "32";
+    }
+
+    //Detect the OS
+    if (navigator.platform.indexOf("Win") != -1){
+     userOS = "win";
+     
+     if (processorArchitecture == "64")
+      processorArchitecture = "32";
+    } 
+    else if (navigator.platform.indexOf("Mac") != -1){
+     userOS = "mac";
+     
+     if (processorArchitecture == "64")
+      processorArchitecture = "32";
+    } 
+    else if (navigator.platform.indexOf("Lin") != -1){
+     userOS = "lin";
+    }
+
+    //Check for valid detection
+    if (userOS != "" && processorArchitecture != "") {
+      //Valid match found
+      var optionSelectionID = userOS + processorArchitecture;
+      
+      console.log(optionSelectionID);
+      
+      //Auto detect OS
+      angular.element( document.querySelector( "#" +  optionSelectionID) ).selected = true;
+    }
+  };
   
   //Function used to trigger file download by means of redirection (window.location)
   $scope.downloadFile = function(type, versionID, operatingSystemID) {
