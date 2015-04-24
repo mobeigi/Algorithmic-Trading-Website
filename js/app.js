@@ -43,6 +43,27 @@ app.controller("VersionController", function($scope, $sce, $http, $window, $docu
     });
   });
   
+  //Auto select Operating System based on detection
+  if (navigator.userAgent.indexOf("WOW64") != -1 || 
+    navigator.userAgent.indexOf("Win64") != -1 ){
+   alert("This is a 64 bit OS");
+  } else { //Assume 32 bit
+   alert("32 bit OS");
+  }
+  
+  if (navigator.platform.indexOf("Win") != -1){
+   alert("Windows");
+  } 
+  else if (navigator.platform.indexOf("Mac") != -1){
+   alert("Mac");
+  } 
+  else if (navigator.platform.indexOf("Lin") != -1){
+   alert("Linux");
+  } 
+  else {
+   alert("WTF!!!");
+  }
+  
   //Function used to trigger file download by means of redirection (window.location)
   $scope.downloadFile = function(type, versionID, operatingSystemID) {
     var deploymentID = versionID + operatingSystemID;
