@@ -14,6 +14,7 @@
         <!-- Drop Down Menu for OS -->
         <strong>Select Operating System</strong>
         <select ng-change="showBuildInfo(versionID, operatingSystemID)" ng-model="operatingSystemID" ng-options="os.id as os.label for os in osList track by os.id" id="download-dropdown">
+        <option selected="selected" value="">--- Please Select an OS ---</option>
         </select>
         
         <div ng-click="detectOS()">Test</div>
