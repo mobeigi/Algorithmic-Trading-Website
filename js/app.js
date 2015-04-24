@@ -48,8 +48,9 @@ app.controller("VersionController", function($scope, $sce, $http, $window, $docu
     //We do this here as it is at this stage that we have parsed our JSON file and populated our select
     $scope.versionID = $scope.versions[0];
     
-    //Once version is set show info
-    $scope.showBuildInfo($scope.versionID.versionNum, $scope.operatingSystemID.id)
+    //Once version is set, try to show build info
+    if (typeof $scope.operatingSystemID  !== 'undefined')
+      $scope.showBuildInfo($scope.versionID.versionNum, $scope.operatingSystemID.id)
   });
   
   //Create supported operating systems list
@@ -129,6 +130,10 @@ app.controller("VersionController", function($scope, $sce, $http, $window, $docu
       
       //Auto select the detected option
       $scope.operatingSystemID = {id: optionSelectionID};
+      
+      //Once OS is set, try to show build info
+      if (typeof $scope.versionID !== 'undefined')
+        $scope.showBuildInfo($scope.versionID.versionNum, $scope.operatingSystemID.id)
     }
     else {
       //Failed to auto detect OS
