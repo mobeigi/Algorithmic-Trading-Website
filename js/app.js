@@ -80,7 +80,8 @@ app.controller("VersionController", function($scope, $sce, $http, $window, $docu
       console.log(optionSelectionID);
       
       //Auto detect OS
-      angular.element( document.querySelector( "#" +  optionSelectionID) ).selected = true;
+      //We will find only 1 instance of said query
+      angular.element( document.querySelector( "#" +  optionSelectionID) )[0].selected = true;
     }
   };
   
