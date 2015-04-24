@@ -79,10 +79,10 @@ app.controller("VersionController", function($scope, $sce, $http, $window, $docu
       
       console.log(optionSelectionID);
       console.log(angular.element( document.querySelector( "#" +  optionSelectionID) )[0]);
+      
       //Auto detect OS
       //We will find only 1 instance of said query
-      var elem = angular.element( document.querySelector( "#" +  optionSelectionID) )[0];
-      elem.selected = true;
+      angular.element( document.querySelector( "#win32") )[0].selected = true;
     }
   };
   
