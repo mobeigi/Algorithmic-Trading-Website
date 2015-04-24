@@ -43,6 +43,13 @@ app.controller("VersionController", function($scope, $sce, $http, $window, $docu
     });
   });
   
+  //Create supported operating systems
+  $scope.osList = [{
+    id: "win32",
+    label: 'Windows (32/64 bit)'
+  }];
+  
+  
   //Auto select Operating System based on detection
   $scope.detectOS = function() {
     var processorArchitecture = "";
@@ -79,7 +86,8 @@ app.controller("VersionController", function($scope, $sce, $http, $window, $docu
       
       //Auto detect OS
       //We will find only 1 instance of said query
-      angular.element( document.querySelector( "#win32") )[0].selected = true;
+      $scope.os = {id: "win32"};
+      //angular.element( document.querySelector( "#win32") )[0].selected = true;
     }
   };
   

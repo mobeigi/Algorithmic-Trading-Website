@@ -13,12 +13,7 @@
         
         <!-- Drop Down Menu for OS -->
         <strong>Select Operating System</strong>
-        <select ng-change="showBuildInfo(versionID, operatingSystemID)" ng-model="operatingSystemID" id="download-dropdown">
-        <option selected="selected" value="">--- Please Select an OS ---</option>
-        <option id="win32" value="win32">Windows (32/64 bit)</option>
-        <option id="mac32" value="mac32">Mac OS (32/64 bit)</option>
-        <option id="lin32" value="lin32">Linux (32 bit)</option>
-        <option id="lin64" value="lin64">Linux (64 bit)</option>
+        <select ng-change="showBuildInfo(versionID, operatingSystemID)" ng-model="operatingSystemID" ng-options="os.id as os.label for os in osList track by os.id" id="download-dropdown">
         </select>
         
         <div ng-click="detectOS()">Test</div>
