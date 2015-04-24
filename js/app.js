@@ -83,8 +83,10 @@ app.controller("VersionController", function($scope, $sce, $http, $window, $docu
     if (navigator.userAgent.indexOf("WOW64") != -1 || 
       navigator.userAgent.indexOf("Win64") != -1 ){
      processorArchitecture = "64";
+     processorArchitectureCompat = processorArchitecture;
     } else { //Assume 32 bit
      processorArchitecture = "32";
+     processorArchitectureCompat = processorArchitecture;
     }
 
     //Detect the OS
