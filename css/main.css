@@ -114,3 +114,10 @@ p.loader img {
   font-weight: bold;
   margin-top: 20px;
 }
+
+.os-messages {
+  display: inline;
+  margin-left: 10px;
+  color: #5286FF;
+  font-weight: bold;
+}

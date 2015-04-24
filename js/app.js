@@ -67,7 +67,9 @@ app.controller("VersionController", function($scope, $sce, $http, $window, $docu
   //Auto select Operating System based on detection
   $scope.detectOS = function() {
     var processorArchitecture = "";
+    var processorArchitectureCompat = "";
     var userOS = "";
+    var userOSNicename = "";
 
     if (navigator.userAgent.indexOf("WOW64") != -1 || 
       navigator.userAgent.indexOf("Win64") != -1 ){
@@ -79,27 +81,32 @@ app.controller("VersionController", function($scope, $sce, $http, $window, $docu
     //Detect the OS
     if (navigator.platform.indexOf("Win") != -1){
      userOS = "win";
+     userOSNicename = "Windows";
      
      if (processorArchitecture == "64")
-      processorArchitecture = "32";
+      processorArchitectureCompat = "32";
     } 
     else if (navigator.platform.indexOf("Mac") != -1){
      userOS = "mac";
+     userOSNicename = "Mac OS";
      
      if (processorArchitecture == "64")
-      processorArchitecture = "32";
+      processorArchitectureCompat = "32";
     } 
     else if (navigator.platform.indexOf("Lin") != -1){
-     userOS = "lin";
+      userOSNicename = "Linux";
+      userOS = "lin";
     }
 
     //Check for valid detection
     if (userOS != "" && processorArchitecture != "") {
       //Valid match found
-      var optionSelectionID = userOS + processorArchitecture;
+      var optionSelectionID = userOS + processorArchitectureCompat;
       
-      //Auto detect OS
-      //We will find only 1 instance of said query
+      //Output detected option to os message section
+      $scope.os-messages =  $sce.trustAsHtml("We have detected your OS as " + userOSNicename + " " +processorArchitecture + " bits");
+      
+      //Auto select the detected option
       $scope.operatingSystemID = {id: optionSelectionID};
     }
   };
