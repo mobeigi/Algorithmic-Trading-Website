@@ -252,7 +252,7 @@ app.controller("VersionController", function($scope, $sce, $http, $window, $docu
 });
 
 //Viewer controller is used to dynamically load each page
-app.controller("ViewerController", function ViewerController($scope, $sce, $location, $timeout, $http, $compile) {
+app.controller("ViewerController", function ViewerController($scope, $sce, $location, $timeout, $http, $compile, $anchorScroll) {
   
   //Load a website into the content div
   $scope.loadContent = function(webpageName) {
@@ -261,6 +261,12 @@ app.controller("ViewerController", function ViewerController($scope, $sce, $loca
       $scope.content =  $sce.trustAsHtml(data);
     });
   };
+  
+  //Add scroll function to serve as alternative for anchor tags
+  $scope.scrollTo = function(id) {
+      $location.hash(id);
+      $anchorScroll();
+   };
   
   //Get url and load content
   if ($location.path() == "") {
