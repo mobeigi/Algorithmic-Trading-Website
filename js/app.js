@@ -74,10 +74,21 @@ app.controller("VersionController", function($scope, $sce, $http, $window, $docu
     var userOS = "";
     var userOSNicename = "";
 
+    //Check for 64bit processor architecture
     if (navigator.userAgent.indexOf("WOW64") != -1 || 
-      navigator.userAgent.indexOf("Win64") != -1 ){
+      navigator.userAgent.indexOf("Win64") != -1 || 
+      navigator.userAgent.indexOf("x86_64") != -1 ||
+      navigator.userAgent.indexOf("x86-64") != -1 ||
+      navigator.userAgent.indexOf("x64;") != -1 ||
+      navigator.userAgent.indexOf("amd64") != -1 ||
+      navigator.userAgent.indexOf("AMD64") != -1 ||
+      navigator.userAgent.indexOf("x64_64") != -1 ||
+      navigator.userAgent.indexOf("ia64") != -1 ||
+      navigator.userAgent.indexOf("sparc64") != -1 ||
+      navigator.userAgent.indexOf("ppc64") != -1 ||
+      navigator.userAgent.indexOf("IRIX64") != -1){
      processorArchitecture = "64";
-    } else { //Assume 32 bit
+    } else { //Otherwise just assume 32 bit machine
      processorArchitecture = "32";
     }
     
