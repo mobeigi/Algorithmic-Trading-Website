@@ -45,6 +45,9 @@ app.controller("VersionController", function($scope, $sce, $http, $window, $docu
     //Set version to latest by default
     //We do this here as it is at this stage that we have parsed our JSON file and populated our select
     $scope.versionID = $scope.versions[0];
+    
+    //Once version is set show info
+    $scope.showBuildInfo($scope.versionID.versionNum, $scope.operatingSystemID.id)
   });
   
   //Create supported operating systems list
