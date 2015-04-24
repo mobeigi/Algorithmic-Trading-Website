@@ -115,10 +115,10 @@ app.controller("VersionController", function($scope, $sce, $http, $window, $docu
       processorArchitectureCompat = "32";
     } 
     else if (navigator.platform.indexOf("Lin") != -1){
-      userOS = "cat";
+      userOS = "";
       userOSNicename = "Linux";
     }
-
+    
     //Check for valid detection
     if (userOS != "" && processorArchitecture != "") {
       //Valid match found
