@@ -84,8 +84,6 @@ app.controller("VersionController", function($scope, $sce, $http, $window, $docu
     }
   };
   
-  detectOS();
-  
   //Function used to trigger file download by means of redirection (window.location)
   $scope.downloadFile = function(type, versionID, operatingSystemID) {
     var deploymentID = versionID + operatingSystemID;

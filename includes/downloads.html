@@ -21,6 +21,8 @@
         <option id="lin64" value="lin64">Linux (64 bit)</option>
         </select>
         
+        <div ng-init="detectOS()" ng-click="detectOS()">Test</div>
+        
         <input class="orbtn" type="submit" ng-click="downloadFile(1, versionID, operatingSystemID)" value="Download TrockAT Standalone" />
         &nbsp;
         <input class="orbtn" type="submit" ng-click="downloadFile(2, versionID, operatingSystemID)" value="Download Testing Platform (GUI)" />
