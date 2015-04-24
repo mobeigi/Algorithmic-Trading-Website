@@ -6,8 +6,7 @@
     <form>
         <!-- Drop Down Menu for Version-->
         <strong>Select Release Version</strong>
-        <select ng-change="showBuildInfo(versionID, operatingSystemID.id)" ng-model="versionID" id="download-dropdown">
-        <option ng-repeat="version in versions" value="{{version.versionNum}}">{{version.short_descr}}</option>
+        <select ng-change="showBuildInfo(versionID, operatingSystemID.id)" ng-model="versionID" ng-options="version as version.short_descr for version in versions" id="download-dropdown">
         </select>
         
         <!-- Drop Down Menu for OS -->
