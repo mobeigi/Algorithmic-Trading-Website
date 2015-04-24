@@ -2,7 +2,7 @@
 <h1>Builds</h1>
 <p>Select a version corresponding to your operating system and click download.</p>
 <p>This software is released under the GNU General Public License. A copy of the licence can be found <a href="http://www.gnu.org/licenses/gpl.html">here</a>.</p>
-<div ng-controller="VersionController">
+<div ng-controller="VersionController" ng-init="detectOS()">
     <form>
         <!-- Drop Down Menu for Version-->
         <strong>Select Release Version</strong>
@@ -14,14 +14,14 @@
         <!-- Drop Down Menu for OS -->
         <strong>Select Operating System</strong>
         <select ng-change="showBuildInfo(versionID, operatingSystemID)" ng-model="operatingSystemID" id="download-dropdown">
-        <option selected="" value="">--- Please Select an OS ---</option>
-        <option selected="" id="win32" value="win32">Windows (32/64 bit)</option>
-        <option selected="" id="mac32" value="mac32">Mac OS (32/64 bit)</option>
-        <option selected="" id="lin32" value="lin32">Linux (32 bit)</option>
-        <option selected="" id="lin64" value="lin64">Linux (64 bit)</option>
+        <option selected="selected" value="">--- Please Select an OS ---</option>
+        <option id="win32" value="win32">Windows (32/64 bit)</option>
+        <option id="mac32" value="mac32">Mac OS (32/64 bit)</option>
+        <option id="lin32" value="lin32">Linux (32 bit)</option>
+        <option id="lin64" value="lin64">Linux (64 bit)</option>
         </select>
         
-        <div ng-init="detectOS()" ng-click="detectOS()">Test</div>
+        <div ng-click="detectOS()">Test</div>
         
         <input class="orbtn" type="submit" ng-click="downloadFile(1, versionID, operatingSystemID)" value="Download TrockAT Standalone" />
         &nbsp;
