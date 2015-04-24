@@ -41,6 +41,8 @@ app.controller("VersionController", function($scope, $sce, $http, $window, $docu
         });
       });
     });
+    
+    $scope.versionID = $scope.versions[0];
   });
   
   //Create supported operating systems list
