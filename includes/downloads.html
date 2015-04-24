@@ -6,20 +6,20 @@
     <form>
         <!-- Drop Down Menu for Version-->
         <strong>Select Release Version</strong>
-        <select ng-change="showBuildInfo(versionID, operatingSystemID)" ng-model="versionID" id="download-dropdown">
+        <select ng-change="showBuildInfo(versionID, operatingSystemID.id)" ng-model="versionID" id="download-dropdown">
         <option ng-repeat="version in versions" value="{{version.versionNum}}">{{version.short_descr}}</option>
         </select>
         
         <!-- Drop Down Menu for OS -->
         <strong>Select Operating System</strong>
         <div class="os-messages" ng-bind-html="os_detection_box"></div>
-        <select ng-change="showBuildInfo(versionID, operatingSystemID)" ng-model="operatingSystemID" ng-options="os as os.label for os in osList track by os.id" id="download-dropdown">
+        <select ng-change="showBuildInfo(versionID, operatingSystemID.id)" ng-model="operatingSystemID" ng-options="os as os.label for os in osList track by os.id" id="download-dropdown">
         <option value="">--- Please Select an OS ---</option>
         </select>
         
-        <input class="orbtn" type="submit" ng-click="downloadFile(1, versionID, operatingSystemID)" value="Download TrockAT Standalone" />
+        <input class="orbtn" type="submit" ng-click="downloadFile(1, versionID, operatingSystemID.id)" value="Download TrockAT Standalone" />
         &nbsp;
-        <input class="orbtn" type="submit" ng-click="downloadFile(2, versionID, operatingSystemID)" value="Download Testing Platform (GUI)" />
+        <input class="orbtn" type="submit" ng-click="downloadFile(2, versionID, operatingSystemID.id)" value="Download Testing Platform (GUI)" />
     </form>
     
     <div class="error-messages" ng-bind-html="error_box"></div>
