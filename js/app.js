@@ -46,7 +46,7 @@ app.controller("VersionController", function($scope, $sce, $http, $window, $docu
   //Create supported operating systems list
   $scope.osList = [
     {
-      id: "", //default selection box
+      id: "default", //default selection box
       label: "--- Please Select an OS ---"
     },
     {
