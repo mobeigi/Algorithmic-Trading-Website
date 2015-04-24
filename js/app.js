@@ -67,8 +67,6 @@ app.controller("VersionController", function($scope, $sce, $http, $window, $docu
     }
   ];
   
-  $scope.operatingSystemID = $scope.osList[0];
-  
   
   //Auto select Operating System based on detection
   $scope.detectOS = function() {
@@ -115,7 +113,7 @@ app.controller("VersionController", function($scope, $sce, $http, $window, $docu
       $scope.os_detection_box =  $sce.trustAsHtml("(We have detected your OS as " + userOSNicename + " " +processorArchitecture + " bits)");
       
       //Auto select the detected option
-      $scope.operatingSystemID = {id: optionSelectionID};
+      $scope.operatingSystemID = $scope.osList[2];
     }
   };
   
