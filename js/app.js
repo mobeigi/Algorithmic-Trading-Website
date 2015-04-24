@@ -43,11 +43,25 @@ app.controller("VersionController", function($scope, $sce, $http, $window, $docu
     });
   });
   
-  //Create supported operating systems
-  $scope.osList = [{
-    id: "win32",
-    label: 'Windows (32/64 bit)'
-  }];
+  //Create supported operating systems list
+  $scope.osList = [
+    {
+      id: "win32",
+      label: 'Windows (32/64 bit)'
+    },
+    {
+      id: "mac32",
+      label: 'Mac OS (32/64 bit)'
+    },
+    {
+      id: "lin32",
+      label: 'Linux (32 bit)'
+    },
+    {
+      id: "lin64",
+      label: 'Linux (64 bit)'
+    }
+  ];
   
   
   //Auto select Operating System based on detection
