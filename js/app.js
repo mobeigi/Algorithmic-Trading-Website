@@ -269,7 +269,7 @@ app.controller("ViewerController", ['$scope','$sce', '$location', '$timeout', '$
   else {
     //Check if file exists
     var request = new XMLHttpRequest();
-    request.open('HEAD', "/includes" + $location.path() + ".html", true);
+    request.open('HEAD', "/includes" + $location.path() + ".html", false);
     request.send();
     
     //If file exists load proper page
