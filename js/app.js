@@ -123,7 +123,7 @@ app.controller("VersionController", function($scope, $sce, $http, $window, $docu
   
   //Used to load build info after short delay
   $scope.initBuildInfo = function() {
-   $timeout(function() { $scope.showBuildInfo($scope.versionID.versionNum, $scope.operatingSystemID.id);}, 500);
+   $timeout(function() { $scope.showBuildInfo($scope.versionID.versionNum, $scope.operatingSystemID.id);}, 250);
   }
   
   //Function used to trigger file download by means of redirection (window.location)
