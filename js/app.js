@@ -116,7 +116,7 @@ app.controller("VersionController", function($scope, $sce, $http, $window, $docu
       processorArchitectureCompat = "32";
     } 
     else if (navigator.platform.indexOf("Lin") != -1){
-      userOS = "";
+      userOS = "lin";
       userOSNicename = "Linux";
     }
     
