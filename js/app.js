@@ -116,6 +116,11 @@ app.controller("VersionController", function($scope, $sce, $http, $window, $docu
     }
   };
   
+  //Used to clear auto detection box
+  $scope.clearOS = function () {
+    $scope.os_detection_box =  $sce.trustAsHtml("");
+  };
+  
   //Function used to trigger file download by means of redirection (window.location)
   $scope.downloadFile = function(type, versionID, operatingSystemID) {
     var deploymentID = versionID + operatingSystemID;
