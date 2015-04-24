@@ -63,7 +63,7 @@ app.controller("VersionController", function($scope, $sce, $http, $window, $docu
     }
   ];
   
-  $scope.operatingSystemID = {id: "lin32", label: "Linux (32 bit)"};
+  $scope.operatingSystemID = {id: "lin32"};
 
   //Auto select Operating System based on detection
   $scope.detectOS = function() {
