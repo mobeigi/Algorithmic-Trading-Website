@@ -76,6 +76,8 @@ app.controller("VersionController", function($scope, $sce, $http, $window, $docu
     //Valid match found
     var optionSelectionID = userOS + processorArchitecture;
     
+    console.log(optionSelectionID);
+    
     //Auto detect OS
     document.getElementById(optionSelectionID).selected = true;
   }
