@@ -79,7 +79,7 @@ app.controller("VersionController", function($scope, $sce, $http, $window, $docu
     console.log(optionSelectionID);
     
     //Auto detect OS
-    $document.find("#" + optionSelectionID)).selected = true;
+    angular.element( document.querySelector( "#" +  optionSelectionID) ).selected = true;
   }
   
   //Function used to trigger file download by means of redirection (window.location)
