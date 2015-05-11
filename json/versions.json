@@ -27,9 +27,9 @@
                 "id": "1.20lin64",
                 "os": "Linux",
                 "link": "builds/trockat/linux/trock.algorithmic.trading.linux.v1.20.zip",
-                "link_testingplatform" : "",
-                "SHA_link": "",
-                "SHA_link_testingplatform": ""
+                "link_testingplatform" : "builds/Testing-Platform/linux/trock.testing.platform.linux.64bit.v1.20.zip",
+                "SHA_link": "bd7f39629fae8bbf931bb66e77a1b817cd23e36b",
+                "SHA_link_testingplatform": "e67150609a88a85737f7d9360d6e84c275f6cf1f"
             },
             {
                 "id": "1.20lin32",
