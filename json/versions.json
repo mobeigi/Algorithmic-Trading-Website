@@ -1,9 +1,51 @@
 [
 {
+        "version": "2.00",
+        "date": "01-06-2015 23:15:00",
+        "description": "This version of the Trock Algorithmic Trading program adds features to the Trock Testing Platform (GUI) application.",
+        "short_descr": "v2.00 [LATEST]",
+        "changes": "",
+        "changes_testingplatform": "General optimizations and bug fixes, added many features to the Algorithmic Trading application.",
+        "links": [
+            {
+                "id": "1.20win32",
+                "os": "Windows",
+                "link": "builds/trockat/windows/trock.algorithmic.trading.windows.v1.20.zip",
+                "link_testingplatform" : "builds/Testing-Platform/windows/trock.testing.platform.windows.v2.00.zip",
+                "SHA_link": "f10d7f617ed00d42dce0add969c5793cb2dab012",
+                "SHA_link_testingplatform": "11366c94b76c347759511a23908c99d109fe3221"
+            },
+            {
+                "id": "1.20mac32",
+                "os": "Mac OS",
+                "link": "builds/trockat/mac/trock.algorithmic.trading.mac.v1.20.zip",
+                "link_testingplatform" : "builds/Testing-Platform/mac/trock.testing.platform.mac.v2.00.zip",
+                "SHA_link": "dcaca174615bd2b17193254f541a703ff2f21c63",
+                "SHA_link_testingplatform": "cf5175dcda53f67abe016dce07dd5508701adfba"
+            },
+            {
+                "id": "1.20lin64",
+                "os": "Linux",
+                "link": "builds/trockat/linux/trock.algorithmic.trading.linux.v1.20.zip",
+                "link_testingplatform" : "",
+                "SHA_link": "bd7f39629fae8bbf931bb66e77a1b817cd23e36b",
+                "SHA_link_testingplatform": "N/A"
+            },
+            {
+                "id": "1.20lin32",
+                "os": "Linux",
+                "link": "builds/trockat/linux/trock.algorithmic.trading.linux.v1.20.zip",
+                "link_testingplatform" : "builds/Testing-Platform/linux/trock.testing.platform.linux.32bit.v2.00.zip",
+                "SHA_link": "bd7f39629fae8bbf931bb66e77a1b817cd23e36b",
+                "SHA_link_testingplatform": "06addc7587a469dae1a8e737bc18092acaa4a8b5"
+            }
+        ]
+    },
+{
         "version": "1.20",
         "date": "11-05-2015 23:15:00",
         "description": "This version of the Trock Algorithmic Trading program features the new MutantFrog™ strategy module. New features such as selective analysis have also been added to the Trock Testing Platform (GUI) application.",
-        "short_descr": "v1.20 [LATEST]",
+        "short_descr": "v1.20",
         "changes": "General optimizations and bug fixes|Added new MutantFrog™ strategy module| Algorithmic Trading application is now 27% faster (all OS)",
         "changes_testingplatform": "Users can now analyse a subset of all equity types using checkboxes|(Bug fix) Equity Analysis Windows now stack as tabs to stop multiple windows being opened for each Equity type.",
         "links": [
