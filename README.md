@@ -6,13 +6,13 @@ Images
 -----
 
 <h4>AJAX loading:</h4>
-![AJAX loading](/screenshots/ajax-loading.png?raw=true "AJAX loading")
+![AJAX loading](/../screenshots/screenshots/ajax-loading.png?raw=true "AJAX loading")
 
 <h4>Builds Page:</h4>
-![Builds Page](/screenshots/builds.png?raw=true "Builds Page")
+![Builds Page](/../screenshots/screenshots/builds.png?raw=true "Builds Page")
 
 <h4>Documentation:</h4>
-![Documentation](/screenshots/documentation.png?raw=true "Documentation")
+![Documentation](/../screenshots/screenshots/documentation.png?raw=true "Documentation")
 
 License
 ----
