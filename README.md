@@ -12,12 +12,15 @@ Images
 -----
 
 <h4>AJAX loading:</h4>
+
 ![AJAX loading](/../screenshots/screenshots/ajax-loading.png?raw=true "AJAX loading")
 
 <h4>Builds Page:</h4>
+
 ![Builds Page](/../screenshots/screenshots/builds.png?raw=true "Builds Page")
 
 <h4>Documentation:</h4>
+
 ![Documentation](/../screenshots/screenshots/documentation.png?raw=true "Documentation")
 
 License
